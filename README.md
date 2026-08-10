@@ -1,55 +1,48 @@
 # Good Works Disability Services — Website
 
 Next.js (App Router) + TypeScript + Tailwind CSS site for
-`goodworksdisabilityservices.com.au`, with a contact form that saves
-submissions to MongoDB.
+`goodworksdisabilityservices.com.au`, statically exported and deployed to
+GitHub Pages.
 
 ## Stack
 
 - Next.js 16 (App Router), React 19, TypeScript
 - Tailwind CSS v4
-- Mongoose (MongoDB) for the contact form
-- Zod for server-side form validation
+- Static export (`output: "export"`) — no server, no database
 
 ## Getting started
 
 ```bash
 npm install
-cp .env.local.example .env.local   # then fill in MONGODB_URI
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## MongoDB setup
+## Deployment (GitHub Pages)
 
-1. Create a database (local MongoDB, or a free cluster on
-   [MongoDB Atlas](https://www.mongodb.com/atlas)).
-2. Copy `.env.local.example` to `.env.local` and set `MONGODB_URI` to your
-   connection string, e.g.:
-   ```
-   MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/goodworks?retryWrites=true&w=majority
-   ```
-3. Restart `npm run dev`. Submitting the contact form at `/contact` will
-   create documents in the `contactsubmissions` collection with this shape:
-   ```ts
-   {
-     name: string;
-     email: string;
-     phone?: string;
-     message: string;
-     service?: string;      // service slug the enquiry relates to
-     source: "website-contact-form";
-     createdAt: Date;
-     updatedAt: Date;
-   }
-   ```
-   The Mongoose model lives at `src/models/ContactSubmission.ts` and the API
-   route at `src/app/api/contact/route.ts` — adjust either to add fields,
-   send email notifications, etc.
+Pushing to `main` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
+which runs `npm run build` (static export to `out/`) and publishes it via
+GitHub Pages. In the repo's **Settings → Pages**, set the source to
+**GitHub Actions**.
 
-No `MONGODB_URI` is committed anywhere in this repo — `.env.local` is
-git-ignored by default.
+The site is served at the custom domain in `public/CNAME`
+(`goodworksdisabilityservices.com.au`) — point that domain's DNS at GitHub
+Pages per [GitHub's custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+`public/.nojekyll` disables Jekyll processing so Next.js's `_next/` asset
+folder is served correctly.
+
+## Contact form
+
+GitHub Pages can only serve static files — it can't run a backend, so the
+contact form (`src/components/ContactForm.tsx`) builds a `mailto:` link from
+the filled-in fields and opens the visitor's email app, addressed to
+`hello@goodworksdisabilityservices.com.au`. No server, database or API route
+is involved.
+
+If you later move to a host that supports server code (e.g. Vercel, Netlify),
+you could swap this for a real backend — a serverless function or API route
+that saves submissions to a database — instead of `mailto`.
 
 ## Project structure
 
@@ -57,21 +50,19 @@ git-ignored by default.
 src/
   app/
     page.tsx                  Home
-    about-us/page.tsx
+    about-us/page.tsx         About Us overview
+    about-us/[section]/       Our Story, Mission, Vision, Our Values,
+                               Meet Our Team, Why Choose Us — one page each
     services/page.tsx         Services overview
     services/[slug]/page.tsx  Individual service detail pages
     ndis-information/page.tsx NDIS explainer + FAQ
     resources/page.tsx
     careers/page.tsx
     contact/page.tsx          Contact page (form + details)
-    api/contact/route.ts      POST handler — validates + saves to MongoDB
   components/                 Header, Footer, Buttons, cards, form, etc.
   lib/
     site-data.ts               All page copy/content in one place
-    mongodb.ts                 Cached Mongoose connection helper
     utils.ts
-  models/
-    ContactSubmission.ts       Mongoose schema
 ```
 
 Site copy, services, FAQs, testimonials, career listings, etc. all live in
@@ -86,10 +77,12 @@ Site copy, services, FAQs, testimonials, career listings, etc. all live in
   photography when available.
 - Resource "documents" on `/resources` are listed but not linked to real PDF
   files yet — add files under `public/` and link them once available.
+- "Meet Our Team" (`/about-us/meet-our-team`) describes team roles generally
+  — add real names/photos when ready.
 
 ## Build
 
 ```bash
-npm run build
-npm run start
+npm run build   # static export to ./out
+npx serve out   # preview the exported site locally
 ```

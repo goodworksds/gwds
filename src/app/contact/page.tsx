@@ -71,10 +71,6 @@ export default function ContactPage() {
             <Suspense fallback={null}>
               <ContactForm />
             </Suspense>
-            <p className="mt-4 text-xs text-muted-foreground">
-              This form stores submissions securely and is not connected to a
-              live inbox — connect a notification workflow before going live.
-            </p>
           </div>
         </Container>
       </section>
