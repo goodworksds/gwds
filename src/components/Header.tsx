@@ -51,7 +51,7 @@ function DesktopNavDropdown({
       <span
         className={cn(
           "flex items-center gap-1 text-sm font-medium text-foreground/80",
-          isActive && "text-primary",
+          isActive && "text-primary text-selected",
         )}
       >
         <Link href={href} className="transition-colors hover:text-primary">
@@ -127,7 +127,7 @@ function MobileNavDropdown({
       <div
         className={cn(
           "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-secondary hover:text-primary",
-          isActive && "bg-secondary text-primary",
+          isActive && "bg-secondary text-primary text-selected",
         )}
       >
         <Link href={href} onClick={onNavigate} className="flex-1">
@@ -137,7 +137,10 @@ function MobileNavDropdown({
           type="button"
           aria-label={isOpen ? `Collapse ${label}` : `Expand ${label}`}
           onClick={onToggle}
-          className="flex h-8 w-8 items-center justify-center"
+          className={cn(
+            "flex h-8 w-8 items-center justify-center",
+            isActive && "bg-secondary text-primary text-selected",
+          )}
         >
           <ChevronDown
             className={cn(
@@ -219,7 +222,7 @@ export default function Header() {
                   href={link.href}
                   className={cn(
                     "text-sm font-medium text-foreground/80 transition-colors hover:text-primary",
-                    pathname === link.href && "text-primary",
+                    pathname === link.href && "text-primary text-selected",
                   )}
                 >
                   {link.label}
@@ -279,7 +282,8 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className={cn(
                     "rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-secondary hover:text-primary",
-                    pathname === link.href && "bg-secondary text-primary",
+                    pathname === link.href &&
+                      "bg-secondary text-primary text-selected",
                   )}
                 >
                   {link.label}

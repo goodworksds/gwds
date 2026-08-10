@@ -25,14 +25,17 @@ export default function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-white/80 hover:text-white"
+                  className="text-white/80 hover:text-sun hover:underline"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/contact" className="text-white/80 hover:text-white">
+              <Link
+                href="/contact"
+                className="text-white/80 hover:text-sun hover:underline"
+              >
                 Contact
               </Link>
             </li>
@@ -48,7 +51,7 @@ export default function Footer() {
               <li key={service.slug}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="text-white/80 hover:text-white"
+                  className="text-white/80 hover:text-sun hover:underline"
                 >
                   {service.title}
                 </Link>
@@ -63,14 +66,17 @@ export default function Footer() {
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-white/80">
             <li>
-              <a href={siteConfig.phoneHref} className="hover:text-white">
+              <a
+                href={siteConfig.phoneHref}
+                className="hover:text-sun hover:underline"
+              >
                 {siteConfig.phone}
               </a>
             </li>
             <li>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="hover:text-white"
+                className="hover:text-sun hover:underline"
               >
                 {siteConfig.email}
               </a>

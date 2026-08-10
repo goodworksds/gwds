@@ -43,7 +43,7 @@ export default async function ServiceDetailPage({
     <>
       <section className="bg-gradient-deep py-20 sm:py-24">
         <Container className="max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-white/70">
+          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-sun/99">
             Service
           </span>
           <h1 className="mt-3 font-serif text-3xl font-semibold text-white sm:text-4xl">
