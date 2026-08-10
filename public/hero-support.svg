@@ -1,0 +1,25 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7ecef" />
+      <stop offset="100%" stop-color="#eef1fb" />
+    </linearGradient>
+    <linearGradient id="blob1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8779f" />
+      <stop offset="55%" stop-color="#b03a72" />
+      <stop offset="100%" stop-color="#e8a35a" />
+    </linearGradient>
+    <linearGradient id="blob2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3d5a99" />
+      <stop offset="100%" stop-color="#6c8fd1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)" />
+  <circle cx="560" cy="230" r="230" fill="url(#blob1)" opacity="0.9" />
+  <circle cx="180" cy="760" r="260" fill="url(#blob2)" opacity="0.85" />
+  <path d="M400 300 C300 300 260 380 260 460 C260 600 400 700 400 700 C400 700 540 600 540 460 C540 380 500 300 400 300Z" fill="#ffffff" opacity="0.9" />
+  <path d="M400 360 C350 360 328 400 328 440 C328 510 400 560 400 560 C400 560 472 510 472 440 C472 400 450 360 400 360Z" fill="url(#blob1)" />
+  <circle cx="150" cy="180" r="18" fill="#ffffff" opacity="0.7" />
+  <circle cx="680" cy="620" r="26" fill="#ffffff" opacity="0.6" />
+  <circle cx="620" cy="860" r="14" fill="#ffffff" opacity="0.7" />
+</svg>
