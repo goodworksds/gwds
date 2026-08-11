@@ -81,7 +81,7 @@ export default function Footer() {
                 {siteConfig.email}
               </a>
             </li>
-            <li>{siteConfig.address}</li>
+            {/* <li>{siteConfig.address}</li> */}
           </ul>
         </div>
       </Container>
