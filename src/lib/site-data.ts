@@ -2,10 +2,10 @@ export const siteConfig = {
   name: "Good Works Disability Services",
   shortName: "Good Works",
   domain: "goodworksdisabilityservices.com.au",
-  phone: "1300 000 000",
-  phoneHref: "tel:1300000000",
+  phone: "04 3316 5178",
+  phoneHref: "tel:0433165178",
   email: "admin@goodworksdisabilityservices.com.au",
-  address: "Suite 4, 120 Dandenong Road, Melbourne VIC 3000",
+  // address: "Suite 4, 120 Dandenong Road, Melbourne VIC 3000",
   hours: "Mon–Fri 9:00am – 5:00pm · On-call support 24/7",
   tagline: "Registered NDIS provider · Melbourne wide",
   footerTagline:

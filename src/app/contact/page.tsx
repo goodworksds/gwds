@@ -13,9 +13,19 @@ export const metadata: Metadata = {
 };
 
 const contactDetails = [
-  { icon: Phone, label: "Phone", value: siteConfig.phone, href: siteConfig.phoneHref },
-  { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-  { icon: MapPin, label: "Office", value: siteConfig.address },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: siteConfig.phone,
+    href: siteConfig.phoneHref,
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: siteConfig.email,
+    href: `mailto:${siteConfig.email}`,
+  },
+  // { icon: MapPin, label: "Office", value: siteConfig.address },
   { icon: Clock, label: "Hours", value: siteConfig.hours },
 ];
 
