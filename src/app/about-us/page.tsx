@@ -9,7 +9,7 @@ import { aboutSections, services } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "People before processes, relationships before routines. Learn about Good Works Disability Services' story, mission, vision, values and team.",
+    "Love in Action. Truth in Everything We Do",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="About Us"
-            title="People before processes, relationships before routines"
+            title="Love in Action. Truth in Everything We Do."
             description="We combine the professionalism of a large provider with the warmth and flexibility of a small, tight-knit team."
             light
           />

@@ -10,7 +10,7 @@ export default function SectionHeading({
 }: {
   eyebrow?: string;
   title: string;
-  description?: string;
+  description?: string | React.ReactNode;
   align?: "left" | "center";
   light?: boolean;
   className?: string;

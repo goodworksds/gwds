@@ -4,7 +4,7 @@ import AboutSectionLayout from "@/components/AboutSectionLayout";
 export const metadata: Metadata = {
   title: "Vision",
   description:
-    "Respect and recognition, determination, knowledge, community and professionalism — in every shift, every day.",
+    "To lead with love in action and truth, creating a caring community where respect, integrity, confidentiality, growth, safety, harmony, and passion inspire every life we touch.",
 };
 
 export default function VisionPage() {
@@ -14,8 +14,8 @@ export default function VisionPage() {
         Vision
       </h2>
       <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-        Respect and recognition, determination, knowledge, community and
-        professionalism — in every shift, every day.
+        To lead with love in action and truth, creating a caring community where respect, 
+        integrity, confidentiality, growth, safety, harmony, and passion inspire every life we touch.
       </p>
     </AboutSectionLayout>
   );

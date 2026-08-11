@@ -186,12 +186,12 @@ export const aboutSections: AboutSection[] = [
   {
     slug: "mission",
     title: "Mission",
-    tagline: "What we're here to do",
+    tagline: "To provide the highest quality support and services that empower people living with a disability to lead a fulfilling and valued.",
   },
   {
     slug: "vision",
     title: "Vision",
-    tagline: "What we're working towards",
+    tagline: "To lead with love in action and truth, creating a caring community where respect, integrity, confidentiality, growth, safety, harmony, and passion inspire every life we touch.",
   },
   {
     slug: "our-values",

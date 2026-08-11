@@ -4,7 +4,7 @@ import AboutSectionLayout from "@/components/AboutSectionLayout";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Our mission is to provide the highest quality support and services that empower people living with a disability to lead a fulfilling and valued life.",
+    " To provide the highest quality support and services that empower people living with a disability to lead a fulfilling and valued",
 };
 
 export default function MissionPage() {
@@ -14,8 +14,7 @@ export default function MissionPage() {
         Mission
       </h2>
       <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-        To provide the highest quality support and services that empower
-        people living with a disability to lead a fulfilling and valued life.
+        To provide the highest quality support and services that empower people living with a disability to lead a fulfilling and valued.
       </p>
     </AboutSectionLayout>
   );
