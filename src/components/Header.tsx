@@ -13,13 +13,10 @@ import { cn } from "@/lib/utils";
 type DropdownItem = { label: string; href: string };
 
 const dropdownItemsByHref: Record<string, DropdownItem[]> = {
-  "/about-us": [
-    ...aboutSections.map((section) => ({
-      label: section.title,
-      href: `/about-us/${section.slug}`,
-    })),
-    { label: "View all about us", href: "/about-us" },
-  ],
+  "/about-us": aboutSections.map((section) => ({
+    label: section.title,
+    href: `/about-us#${section.slug}`,
+  })),
   "/services": [
     ...services.map((service) => ({
       label: service.title,
