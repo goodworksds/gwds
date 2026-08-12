@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";
+import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
 import { navLinks, services, siteConfig } from "@/lib/site-data";
 
 export default function Footer() {
@@ -68,21 +70,42 @@ export default function Footer() {
             <li>
               <a
                 href={siteConfig.phoneHref}
-                className="hover:text-sun hover:underline"
+                className="flex items-center gap-2 hover:text-sun hover:underline"
               >
+                <Phone className="h-4 w-4 shrink-0" />
                 {siteConfig.phone}
               </a>
             </li>
             <li>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="hover:text-sun hover:underline"
+                className="flex items-center gap-2 hover:text-sun hover:underline"
               >
+                <Mail className="h-4 w-4 shrink-0" />
                 {siteConfig.email}
               </a>
             </li>
             {/* <li>{siteConfig.address}</li> */}
           </ul>
+
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=61592779771385"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Good Works Disability Services on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-sun hover:text-sun"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Good Works Disability Services on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-sun hover:text-sun"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </Container>
 
