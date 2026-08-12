@@ -189,7 +189,7 @@ export default function Header() {
       </div>
 
       <div className="border-b border-border">
-        <Container className="flex items-center justify-between py-`">
+        <Container className="flex items-center justify-between py-1">
           <Logo variant="light" />
 
           <nav className="hidden items-center gap-8 lg:flex">
