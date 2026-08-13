@@ -31,7 +31,7 @@ export default function HomePage() {
           </div>
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/home-1.png"
+              src="/images/home-1.jpeg"
               alt="A support worker sharing a warm moment with a participant"
               fill
               priority
