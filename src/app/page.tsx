@@ -10,12 +10,9 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-deep">
-        <Container className="grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
+        <Container className="grid gap-12 py-14 lg:grid-cols-2 lg:items-center lg:py-16">
           <div>
-            <span className="inline-flex items-center rounded-full border border-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-sun/99">
-              Registered NDIS Provider
-            </span>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Support that rises with you,{" "}
               <span className="text-gradient-sunrise">every day</span>
             </h1>
@@ -32,9 +29,9 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-3xl shadow-lift">
+          <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/hero-support.svg"
+              src="/images/home-1.png"
               alt="A support worker sharing a warm moment with a participant"
               fill
               priority
