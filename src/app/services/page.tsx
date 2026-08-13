@@ -12,19 +12,27 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <section className="py-20 sm:py-24">
-      <Container>
-        <SectionHeading
-          eyebrow="Our Services"
-          title="Flexible NDIS supports, coordinated as one team"
-          description="Every service below can be delivered on its own or combined into a package that matches your plan, your routine and your goals."
-        />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
-          ))}
-        </div>
-      </Container>
-    </section>
+    <>
+      <section className="bg-gradient-deep py-20 sm:py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="Our Services"
+            title="Flexible NDIS supports, coordinated as one team"
+            description="Every service below can be delivered on its own or combined into a package that matches your plan, your routine and your goals."
+            light
+          />
+        </Container>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <Container>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <ServiceCard key={service.slug} service={service} />
+            ))}
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
