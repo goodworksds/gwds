@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-deep py-20 sm:py-24">
+      <section className="bg-gradient-deep py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="About Us"
@@ -25,7 +25,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section id="our-story" className="scroll-mt-32 py-20 sm:py-24">
+      <section id="our-story" className="scroll-mt-32 py-12 sm:py-16">
         <Container className="grid gap-6 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
@@ -42,7 +42,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-20 sm:py-24">
+      <section className="bg-secondary/60 py-12 sm:py-16">
         <Container className="grid gap-8 sm:grid-cols-2">
           <div id="mission" className="scroll-mt-32 rounded-2xl border border-border bg-card p-8 shadow-soft">
             <h3 className="font-serif text-xl font-semibold text-foreground">
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section id="our-values" className="scroll-mt-32 py-20 sm:py-24">
+      <section id="our-values" className="scroll-mt-32 py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="Our Values"
@@ -90,7 +90,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section id="meet-our-team" className="scroll-mt-32 bg-secondary/60 py-20 sm:py-24">
+      <section id="meet-our-team" className="scroll-mt-32 bg-secondary/60 py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="Meet Our Team"
@@ -120,7 +120,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section id="why-choose-us" className="scroll-mt-32 py-20 sm:py-24">
+      <section id="why-choose-us" className="scroll-mt-32 py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="Why Choose Us"
@@ -144,7 +144,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-20 sm:py-24">
+      <section className="bg-secondary/60 py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="What we support"

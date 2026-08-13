@@ -42,7 +42,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="What we do"
@@ -57,7 +57,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-20 sm:py-28">
+      <section className="bg-secondary/60 py-12 sm:py-16">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
@@ -89,7 +89,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading
             align="center"

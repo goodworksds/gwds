@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function NdisInformationPage() {
   return (
     <>
-      <section className="bg-gradient-deep py-20 sm:py-24">
+      <section className="bg-gradient-deep py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="NDIS Information"
@@ -25,7 +25,7 @@ export default function NdisInformationPage() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading title="Getting started in four steps" />
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -46,7 +46,7 @@ export default function NdisInformationPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-20 sm:py-24">
+      <section className="bg-secondary/60 py-12 sm:py-16">
         <Container className="max-w-3xl">
           <SectionHeading title="Frequently asked questions" />
           <div className="mt-10">

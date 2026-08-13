@@ -41,7 +41,7 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <section className="bg-gradient-deep py-20 sm:py-24">
+      <section className="bg-gradient-deep py-12 sm:py-16">
         <Container className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-[0.15em] text-sun/99">
             Service
@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <Container className="grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <h2 className="font-serif text-2xl font-semibold text-foreground">

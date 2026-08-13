@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <>
-      <section className="bg-gradient-deep py-20 sm:py-24">
+      <section className="bg-gradient-deep py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="Careers"
@@ -25,7 +25,7 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <Container>
           <SectionHeading title="Current openings" />
           <div className="mt-10 divide-y divide-border rounded-2xl border border-border bg-card shadow-soft">
@@ -57,7 +57,7 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-20 sm:py-24">
+      <section className="bg-secondary/60 py-12 sm:py-16">
         <Container>
           <SectionHeading title="Why work here" />
           <div className="mt-10 grid gap-5 sm:grid-cols-2">

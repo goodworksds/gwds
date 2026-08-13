@@ -32,7 +32,7 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-gradient-deep py-20 sm:py-24">
+      <section className="bg-gradient-deep py-12 sm:py-16">
         <Container>
           <SectionHeading
             eyebrow="Contact"
@@ -43,7 +43,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <Container className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <h2 className="font-serif text-xl font-semibold text-foreground">
