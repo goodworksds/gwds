@@ -2,71 +2,74 @@
 
 import { useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2, Mail } from "lucide-react";
-import { services, siteConfig } from "@/lib/site-data";
+import { CheckCircle2, Loader2 } from "lucide-react";
+import { services } from "@/lib/site-data";
+
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get("service") ?? "";
 
-  const [sent, setSent] = useState(false);
-  const [mailtoHref, setMailtoHref] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
 
-    const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") ?? "");
-    const email = String(formData.get("email") ?? "");
-    const phone = String(formData.get("phone") ?? "");
-    const message = String(formData.get("message") ?? "");
-    const serviceSlug = String(formData.get("service") ?? "");
-    const serviceName =
-      services.find((s) => s.slug === serviceSlug)?.title ?? "Not sure yet";
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      message: String(formData.get("message") ?? ""),
+      service: String(formData.get("service") ?? ""),
+      company: String(formData.get("company") ?? ""),
+    };
 
-    const subject = `Website enquiry from ${name}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      phone && `Phone: ${phone}`,
-      `Service: ${serviceName}`,
-      "",
-      "Message:",
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    const href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+      const data = await res.json().catch(() => ({}));
 
-    setMailtoHref(href);
-    setSent(true);
-    window.location.href = href;
+      if (!res.ok) {
+        setErrorMessage(data.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setErrorMessage("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
   }
 
-  if (sent) {
+  if (status === "success") {
     return (
       <div className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-10 text-center shadow-soft">
         <CheckCircle2 className="h-10 w-10 text-primary" />
         <h3 className="font-serif text-xl font-semibold text-foreground">
-          Your email app should be opening
+          Message sent
         </h3>
         <p className="max-w-sm text-sm text-muted-foreground">
-          We&rsquo;ve pre-filled a message to {siteConfig.email} — just hit send
-          from your email app. If nothing opened,{" "}
-          <a href={mailtoHref} className="font-semibold text-primary hover:underline">
-            click here
-          </a>
-          .
+          Thanks for reaching out — a member of our team will be in touch within
+          one business day.
         </p>
         <button
           type="button"
-          onClick={() => setSent(false)}
+          onClick={() => setStatus("idle")}
           className="mt-2 text-sm font-semibold text-primary hover:underline"
         >
-          Fill out the form again
+          Send another message
         </button>
       </div>
     );
@@ -80,6 +83,18 @@ export default function ContactForm() {
       <h3 className="font-serif text-xl font-semibold text-foreground">
         Send a message
       </h3>
+
+      {/* Honeypot field — hidden from real users, catches basic bots */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="company">Company</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       <div>
         <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
@@ -156,17 +171,22 @@ export default function ContactForm() {
         />
       </div>
 
+      {status === "error" && (
+        <p className="text-sm font-medium text-destructive">{errorMessage}</p>
+      )}
+
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-sunrise px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:shadow-lift"
+        disabled={status === "submitting"}
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-sunrise px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-70"
       >
-        <Mail className="h-4 w-4" />
+        {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" />}
         Send message
       </button>
 
       <p className="text-xs text-muted-foreground">
-        Sending opens your email app with this message pre-filled and
-        addressed to {siteConfig.email}.
+        By submitting, you consent to Good Works Disability Services contacting
+        you about your enquiry.
       </p>
     </form>
   );
