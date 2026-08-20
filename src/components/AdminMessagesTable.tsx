@@ -9,6 +9,7 @@ import {
   AlertTriangle,
   ChevronLeft,
   ChevronRight,
+  CheckCircle2,
 } from "lucide-react";
 import { services } from "@/lib/site-data";
 import AdminLogoutButton from "@/components/AdminLogoutButton";
@@ -23,6 +24,8 @@ export type AdminSubmission = {
   service: string;
   message: string;
   createdAt: string;
+  replied: boolean;
+  repliedAt: string | null;
 };
 
 function serviceLabel(slug: string) {
@@ -36,6 +39,17 @@ function formatDate(iso: string) {
     dateStyle: "medium",
     timeStyle: "short",
   });
+}
+
+function formatRepliedAt(iso: string) {
+  const date = new Date(iso);
+  const month = date.toLocaleString("en-AU", { month: "short" });
+  const day = date.getDate();
+  const hours24 = date.getHours();
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  const ampm = hours24 >= 12 ? "pm" : "am";
+  const hours = hours24 % 12 || 12;
+  return `${month} ${day} at ${hours}:${minutes}${ampm}`;
 }
 
 function DeleteConfirmDialog({
@@ -170,6 +184,14 @@ export default function AdminMessagesTable({
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setReplyStatus("sent");
+        setSubmissions((prev) =>
+          prev.map((s) =>
+            s.id === id
+              ? { ...s, replied: true, repliedAt: data.repliedAt ?? new Date().toISOString() }
+              : s,
+          ),
+        );
+        setReplyOpenId(null);
       } else {
         setReplyStatus("error");
         setReplyError(data.error ?? "Failed to send reply.");
@@ -199,7 +221,14 @@ export default function AdminMessagesTable({
       ) : (
         <div className="space-y-4">
           {pagedSubmissions.map((s) => (
-            <div key={s.id} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+            <div
+              key={s.id}
+              className={
+                s.replied
+                  ? "rounded-2xl border border-accent/30 bg-accent/5 p-6 shadow-soft"
+                  : "rounded-2xl border border-border bg-card p-6 shadow-soft"
+              }
+            >
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <h3 className="font-serif text-xl font-semibold text-foreground">{s.name}</h3>
@@ -222,10 +251,19 @@ export default function AdminMessagesTable({
                 <button
                   type="button"
                   onClick={() => openReply(s.id)}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary"
+                  disabled={s.replied}
+                  className={
+                    s.replied
+                      ? "inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-base font-medium text-accent opacity-70"
+                      : "inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary"
+                  }
                 >
-                  <ReplyIcon className="h-4 w-4" />
-                  Reply
+                  {s.replied ? (
+                    <CheckCircle2 className="h-4 w-4" />
+                  ) : (
+                    <ReplyIcon className="h-4 w-4" />
+                  )}
+                  {s.replied ? "Replied" : "Reply"}
                 </button>
                 <button
                   type="button"
@@ -237,46 +275,46 @@ export default function AdminMessagesTable({
                 </button>
               </div>
 
+              {s.replied && s.repliedAt && (
+                <p className="mt-3 text-base font-medium text-accent">
+                  Reply sent to {s.email} on {formatRepliedAt(s.repliedAt)}.
+                </p>
+              )}
+
               {replyOpenId === s.id && (
                 <div className="mt-4 rounded-xl border border-border bg-background p-4">
-                  {replyStatus === "sent" ? (
-                    <p className="text-base font-medium text-primary">Reply sent to {s.email}.</p>
-                  ) : (
-                    <>
-                      <textarea
-                        value={replyText}
-                        onChange={(event) => setReplyText(event.target.value)}
-                        rows={4}
-                        placeholder={`Write a reply to ${s.name}...`}
-                        className="w-full rounded-xl border border-input bg-card px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                      />
-                      {replyStatus === "error" && (
-                        <p className="mt-2 text-base font-medium text-destructive">{replyError}</p>
-                      )}
-                      <div className="mt-3 flex gap-3">
-                        <button
-                          type="button"
-                          onClick={() => handleSendReply(s.id)}
-                          disabled={replyStatus === "sending" || !replyText.trim()}
-                          className="inline-flex items-center gap-1.5 rounded-full bg-gradient-sunrise px-5 py-2 text-base font-semibold text-white shadow-soft disabled:cursor-not-allowed disabled:opacity-60"
-                        >
-                          {replyStatus === "sending" ? (
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                          ) : (
-                            <Send className="h-4 w-4" />
-                          )}
-                          Send Reply
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => setReplyOpenId(null)}
-                          className="rounded-full px-5 py-2 text-base font-medium text-muted-foreground hover:bg-secondary"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                    </>
+                  <textarea
+                    value={replyText}
+                    onChange={(event) => setReplyText(event.target.value)}
+                    rows={4}
+                    placeholder={`Write a reply to ${s.name}...`}
+                    className="w-full rounded-xl border border-input bg-card px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                  {replyStatus === "error" && (
+                    <p className="mt-2 text-base font-medium text-destructive">{replyError}</p>
                   )}
+                  <div className="mt-3 flex gap-3">
+                    <button
+                      type="button"
+                      onClick={() => handleSendReply(s.id)}
+                      disabled={replyStatus === "sending" || !replyText.trim()}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-gradient-sunrise px-5 py-2 text-base font-semibold text-white shadow-soft disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {replyStatus === "sending" ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Send className="h-4 w-4" />
+                      )}
+                      Send Reply
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setReplyOpenId(null)}
+                      className="rounded-full px-5 py-2 text-base font-medium text-muted-foreground hover:bg-secondary"
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

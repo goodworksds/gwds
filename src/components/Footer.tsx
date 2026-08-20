@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";
 import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
@@ -84,6 +84,10 @@ export default function Footer() {
                 <Mail className="h-4 w-4 shrink-0" />
                 {siteConfig.email}
               </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock className="h-4 w-4 shrink-0" />
+              Mon–Fri 9:00am – 5:00pm
             </li>
             {/* <li>{siteConfig.address}</li> */}
           </ul>

@@ -42,7 +42,10 @@ export async function POST(
       return NextResponse.json({ error: "Failed to send reply email." }, { status: 500 });
     }
 
-    return NextResponse.json({ ok: true });
+    submission.repliedAt = new Date();
+    await submission.save();
+
+    return NextResponse.json({ ok: true, repliedAt: submission.repliedAt });
   } catch (error) {
     console.error("Failed to process reply:", error);
     return NextResponse.json({ error: "Something went wrong." }, { status: 500 });

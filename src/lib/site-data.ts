@@ -6,7 +6,7 @@ export const siteConfig = {
   phoneHref: "tel:0433165178",
   email: "admin@goodworksdisabilityservices.com.au",
   // address: "Suite 4, 120 Dandenong Road, Melbourne VIC 3000",
-  hours: "Mon–Fri 9:00am – 5:00pm · On-call support 24/7",
+  hours: "Mon–Fri 9:00am – 5:00pm",
   tagline: "Registered NDIS provider · Melbourne wide",
   footerTagline:
     "A registered NDIS provider delivering warm, person-centred disability support across Melbourne — sunrise to sunrise.",

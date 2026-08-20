@@ -17,6 +17,8 @@ export default async function AdminPage() {
     service: doc.service ?? "",
     message: doc.message ?? "",
     createdAt: doc.createdAt ? new Date(doc.createdAt).toISOString() : "",
+    replied: Boolean(doc.repliedAt),
+    repliedAt: doc.repliedAt ? new Date(doc.repliedAt).toISOString() : null,
   }));
 
   return (
