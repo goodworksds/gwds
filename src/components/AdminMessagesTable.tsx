@@ -26,6 +26,7 @@ export type AdminSubmission = {
   createdAt: string;
   replied: boolean;
   repliedAt: string | null;
+  repliedMessage: string | null;
 };
 
 function serviceLabel(slug: string) {
@@ -187,7 +188,12 @@ export default function AdminMessagesTable({
         setSubmissions((prev) =>
           prev.map((s) =>
             s.id === id
-              ? { ...s, replied: true, repliedAt: data.repliedAt ?? new Date().toISOString() }
+              ? {
+                  ...s,
+                  replied: true,
+                  repliedAt: data.repliedAt ?? new Date().toISOString(),
+                  repliedMessage: data.repliedMessage ?? replyText.trim(),
+                }
               : s,
           ),
         );
@@ -276,9 +282,16 @@ export default function AdminMessagesTable({
               </div>
 
               {s.replied && s.repliedAt && (
-                <p className="mt-3 text-base font-medium text-accent">
-                  Reply sent to {s.email} on {formatRepliedAt(s.repliedAt)}.
-                </p>
+                <div className="mt-3">
+                  <p className="text-base font-medium text-accent">
+                    Reply sent to {s.email} on {formatRepliedAt(s.repliedAt)}.
+                  </p>
+                  {s.repliedMessage && (
+                    <p className="mt-2 whitespace-pre-wrap rounded-xl bg-accent/10 p-4 text-base leading-relaxed text-foreground">
+                      <span className="font-semibold">Message:</span> {s.repliedMessage}
+                    </p>
+                  )}
+                </div>
               )}
 
               {replyOpenId === s.id && (

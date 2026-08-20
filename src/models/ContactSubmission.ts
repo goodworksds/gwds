@@ -10,6 +10,7 @@ const ContactSubmissionSchema = new Schema(
     source: { type: String, trim: true, maxlength: 200 },
     emailSent: { type: Boolean, default: false },
     repliedAt: { type: Date, default: null },
+    repliedMessage: { type: String, trim: true, maxlength: 5000, default: null },
   },
   { timestamps: true }
 );

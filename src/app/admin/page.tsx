@@ -19,6 +19,7 @@ export default async function AdminPage() {
     createdAt: doc.createdAt ? new Date(doc.createdAt).toISOString() : "",
     replied: Boolean(doc.repliedAt),
     repliedAt: doc.repliedAt ? new Date(doc.repliedAt).toISOString() : null,
+    repliedMessage: doc.repliedMessage ?? null,
   }));
 
   return (

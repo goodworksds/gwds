@@ -43,9 +43,14 @@ export async function POST(
     }
 
     submission.repliedAt = new Date();
+    submission.repliedMessage = message;
     await submission.save();
 
-    return NextResponse.json({ ok: true, repliedAt: submission.repliedAt });
+    return NextResponse.json({
+      ok: true,
+      repliedAt: submission.repliedAt,
+      repliedMessage: submission.repliedMessage,
+    });
   } catch (error) {
     console.error("Failed to process reply:", error);
     return NextResponse.json({ error: "Something went wrong." }, { status: 500 });
