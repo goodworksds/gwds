@@ -1,8 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import { Trash2, Reply as ReplyIcon, Loader2, Send, AlertTriangle } from "lucide-react";
+import { useRef, useState } from "react";
+import {
+  Trash2,
+  Reply as ReplyIcon,
+  Loader2,
+  Send,
+  AlertTriangle,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { services } from "@/lib/site-data";
+import AdminLogoutButton from "@/components/AdminLogoutButton";
+
+const PAGE_SIZE = 5;
 
 export type AdminSubmission = {
   id: string;
@@ -90,14 +101,32 @@ export default function AdminMessagesTable({
   initialSubmissions: AdminSubmission[];
 }) {
   const [submissions, setSubmissions] = useState(initialSubmissions);
+  const [currentPage, setCurrentPage] = useState(1);
   const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [replyOpenId, setReplyOpenId] = useState<string | null>(null);
   const [replyText, setReplyText] = useState("");
   const [replyStatus, setReplyStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [replyError, setReplyError] = useState("");
+  const listTopRef = useRef<HTMLDivElement>(null);
 
   const deleteTarget = submissions.find((s) => s.id === deleteTargetId) ?? null;
+  const totalPages = Math.max(1, Math.ceil(submissions.length / PAGE_SIZE));
+  const pagedSubmissions = submissions.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE,
+  );
+
+  function goToPage(page: number) {
+    setCurrentPage(page);
+    const target = listTopRef.current;
+    if (target) {
+      const header = document.querySelector("header");
+      const offset = header ? header.getBoundingClientRect().height : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top });
+    }
+  }
 
   async function confirmDelete() {
     if (!deleteTargetId) return;
@@ -106,7 +135,12 @@ export default function AdminMessagesTable({
     try {
       const res = await fetch(`/api/admin/contacts/${id}`, { method: "DELETE" });
       if (res.ok) {
-        setSubmissions((prev) => prev.filter((s) => s.id !== id));
+        setSubmissions((prev) => {
+          const next = prev.filter((s) => s.id !== id);
+          const maxPage = Math.max(1, Math.ceil(next.length / PAGE_SIZE));
+          setCurrentPage((page) => Math.min(page, maxPage));
+          return next;
+        });
         setDeleteTargetId(null);
       } else {
         alert("Failed to delete. Please try again.");
@@ -148,6 +182,11 @@ export default function AdminMessagesTable({
 
   return (
     <>
+      <div ref={listTopRef} className="mb-8 flex items-center justify-between">
+        <h1 className="font-serif text-2xl font-semibold text-foreground">Contact Submissions</h1>
+        <AdminLogoutButton />
+      </div>
+
       <p className="mb-6 text-base text-muted-foreground">
         {submissions.length} message{submissions.length === 1 ? "" : "s"} received via the website
         contact form.
@@ -159,7 +198,7 @@ export default function AdminMessagesTable({
         </p>
       ) : (
         <div className="space-y-4">
-          {submissions.map((s) => (
+          {pagedSubmissions.map((s) => (
             <div key={s.id} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
@@ -242,6 +281,32 @@ export default function AdminMessagesTable({
               )}
             </div>
           ))}
+        </div>
+      )}
+
+      {submissions.length > PAGE_SIZE && (
+        <div className="mt-6 flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => goToPage(Math.max(1, currentPage - 1))}
+            disabled={currentPage === 1}
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            Previous
+          </button>
+          <span className="text-base text-muted-foreground">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            type="button"
+            onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+            disabled={currentPage === totalPages}
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Next
+            <ChevronRight className="h-4 w-4" />
+          </button>
         </div>
       )}
 

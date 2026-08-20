@@ -1,7 +1,6 @@
 import { connectToDatabase } from "@/lib/mongodb";
 import ContactSubmission from "@/models/ContactSubmission";
 import AdminMessagesTable, { type AdminSubmission } from "@/components/AdminMessagesTable";
-import AdminLogoutButton from "@/components/AdminLogoutButton";
 import Container from "@/components/Container";
 
 export const dynamic = "force-dynamic";
@@ -23,13 +22,6 @@ export default async function AdminPage() {
   return (
     <section className="py-12 sm:py-16">
       <Container>
-        <div className="mb-8 flex items-center justify-between">
-          <h1 className="font-serif text-2xl font-semibold text-foreground">
-            Contact Submissions
-          </h1>
-          <AdminLogoutButton />
-        </div>
-
         <AdminMessagesTable initialSubmissions={submissions} />
       </Container>
     </section>
