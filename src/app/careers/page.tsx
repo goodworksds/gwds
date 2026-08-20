@@ -35,10 +35,10 @@ export default function CareersPage() {
                 className="flex flex-col gap-3 px-6 py-5 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
-                  <h3 className="font-serif text-base font-semibold text-foreground">
+                  <h3 className="font-serif text-lg font-semibold text-foreground">
                     {role.title}
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-base text-muted-foreground">
                     {role.location} · {role.type}
                   </p>
                 </div>
@@ -64,7 +64,7 @@ export default function CareersPage() {
             {careerPerks.map((perk) => (
               <div key={perk} className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm leading-relaxed text-foreground/85">
+                <span className="text-base leading-relaxed text-foreground/85">
                   {perk}
                 </span>
               </div>

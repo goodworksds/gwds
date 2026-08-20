@@ -37,13 +37,13 @@ export default function ResourcesPage() {
                   <FileText className="h-5 w-5" />
                 </span>
                 <div>
-                  <h3 className="font-serif text-base font-semibold text-foreground">
+                  <h3 className="font-serif text-lg font-semibold text-foreground">
                     {doc.title}
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-base text-muted-foreground">
                     {doc.description}
                   </p>
-                  <span className="mt-2 inline-block text-xs font-semibold uppercase tracking-wide text-primary">
+                  <span className="mt-2 inline-block text-sm font-semibold uppercase tracking-wide text-primary">
                     PDF
                   </span>
                 </div>
@@ -63,7 +63,7 @@ export default function ResourcesPage() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-4 px-6 py-4 text-sm font-medium text-foreground hover:text-primary"
+                  className="flex items-center justify-between gap-4 px-6 py-4 text-base font-medium text-foreground hover:text-primary"
                 >
                   {link.title}
                   <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground" />

@@ -23,7 +23,7 @@ export default function FaqAccordion({
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span className="font-serif text-base font-semibold text-foreground">
+              <span className="font-serif text-lg font-semibold text-foreground">
                 {item.question}
               </span>
               <ChevronDown
@@ -34,7 +34,7 @@ export default function FaqAccordion({
               />
             </button>
             {isOpen && (
-              <div className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">
+              <div className="px-6 pb-5 text-base leading-relaxed text-muted-foreground">
                 {item.answer}
               </div>
             )}

@@ -16,7 +16,7 @@ export default function HomePage() {
               Support that rises with you,{" "}
               <span className="text-gradient-sunrise">every day</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
               Good Works Disability Services delivers warm, practical disability
               support across Melbourne — from everyday living and community
               connection to supported independent living and complex nursing
@@ -77,10 +77,10 @@ export default function HomePage() {
                 className="rounded-2xl border border-border bg-card p-6 shadow-soft"
               >
                 <ShieldCheck className="h-6 w-6 text-primary" />
-                <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">
+                <h3 className="mt-4 font-serif text-xl font-semibold text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -102,10 +102,10 @@ export default function HomePage() {
                 key={t.name}
                 className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-soft"
               >
-                <blockquote className="flex-1 font-serif text-lg leading-relaxed text-foreground">
+                <blockquote className="flex-1 font-serif text-xl leading-relaxed text-foreground">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 text-sm font-semibold text-primary">
+                <figcaption className="mt-5 text-base font-semibold text-primary">
                   {t.name}
                 </figcaption>
               </figure>

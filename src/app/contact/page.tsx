@@ -46,7 +46,7 @@ export default function ContactPage() {
       <section className="py-12 sm:py-16">
         <Container className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <h2 className="font-serif text-xl font-semibold text-foreground">
+            <h2 className="font-serif text-2xl font-semibold text-foreground">
               Get in touch
             </h2>
             <ul className="mt-6 space-y-6">
@@ -56,18 +56,18 @@ export default function ContactPage() {
                     <detail.icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
                       {detail.label}
                     </p>
                     {detail.href ? (
                       <a
                         href={detail.href}
-                        className="mt-0.5 block text-sm font-medium text-foreground hover:text-primary"
+                        className="mt-0.5 block text-base font-medium text-foreground hover:text-primary"
                       >
                         {detail.value}
                       </a>
                     ) : (
-                      <p className="mt-0.5 text-sm font-medium text-foreground">
+                      <p className="mt-0.5 text-base font-medium text-foreground">
                         {detail.value}
                       </p>
                     )}

@@ -47,7 +47,7 @@ function DesktopNavDropdown({
     <div className="relative" onMouseEnter={onOpen} onMouseLeave={onClose}>
       <span
         className={cn(
-          "flex items-center gap-1 text-sm font-medium text-foreground/80",
+          "flex items-center gap-1 text-base font-medium text-foreground/80",
           isActive && "text-primary text-selected",
         )}
       >
@@ -85,7 +85,7 @@ function DesktopNavDropdown({
                   href={item.href}
                   onClick={onClose}
                   className={cn(
-                    "block px-5 py-3 text-sm font-medium text-foreground/85 hover:bg-secondary hover:text-primary",
+                    "block px-5 py-3 text-base font-medium text-foreground/85 hover:bg-secondary hover:text-primary",
                     isLast &&
                       isViewAll &&
                       "border-t border-border font-semibold text-primary",
@@ -123,7 +123,7 @@ function MobileNavDropdown({
     <div>
       <div
         className={cn(
-          "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-secondary hover:text-primary",
+          "flex items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-foreground/80 hover:bg-secondary hover:text-primary",
           isActive && "bg-secondary text-primary text-selected",
         )}
       >
@@ -154,7 +154,7 @@ function MobileNavDropdown({
               key={item.href}
               href={item.href}
               onClick={onNavigate}
-              className="rounded-lg px-3 py-2 text-sm text-foreground/75 hover:bg-secondary hover:text-primary"
+              className="rounded-lg px-3 py-2 text-base text-foreground/75 hover:bg-secondary hover:text-primary"
             >
               {item.label}
             </Link>
@@ -176,7 +176,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur">
       <div className="bg-deep text-deep-foreground">
-        <Container className="flex items-center justify-between py-2 text-xs sm:text-sm">
+        <Container className="flex items-center justify-between py-2 text-sm sm:text-base">
           <span className="truncate">{siteConfig.tagline}</span>
           <a
             href={siteConfig.phoneHref}
@@ -218,7 +218,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "text-sm font-medium text-foreground/80 transition-colors hover:text-primary",
+                    "text-base font-medium text-foreground/80 transition-colors hover:text-primary",
                     pathname === link.href && "text-primary text-selected",
                   )}
                 >
@@ -278,7 +278,7 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-secondary hover:text-primary",
+                    "rounded-lg px-3 py-2.5 text-base font-medium text-foreground/80 hover:bg-secondary hover:text-primary",
                     pathname === link.href &&
                       "bg-secondary text-primary text-selected",
                   )}

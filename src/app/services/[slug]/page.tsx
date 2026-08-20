@@ -43,16 +43,16 @@ export default async function ServiceDetailPage({
     <>
       <section className="bg-gradient-deep py-12 sm:py-16">
         <Container className="max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-sun/99">
+          <span className="text-sm font-semibold uppercase tracking-[0.15em] text-sun/99">
             Service
           </span>
           <h1 className="mt-3 font-serif text-3xl font-semibold text-white sm:text-4xl">
             {service.title}
           </h1>
-          <p className="mt-3 text-lg font-medium text-white/85">
+          <p className="mt-3 text-xl font-medium text-white/85">
             {service.tagline}
           </p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">
             {service.description}
           </p>
         </Container>
@@ -70,7 +70,7 @@ export default async function ServiceDetailPage({
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-sunrise text-white">
                     <Check className="h-3.5 w-3.5" />
                   </span>
-                  <span className="text-base leading-relaxed text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     {bullet}
                   </span>
                 </li>
@@ -84,7 +84,7 @@ export default async function ServiceDetailPage({
           </div>
 
           <aside className="rounded-2xl border border-border bg-secondary/60 p-7">
-            <h3 className="font-serif text-lg font-semibold text-foreground">
+            <h3 className="font-serif text-xl font-semibold text-foreground">
               Other services
             </h3>
             <ul className="mt-4 space-y-3">
@@ -92,7 +92,7 @@ export default async function ServiceDetailPage({
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="text-sm font-medium text-foreground/80 hover:text-primary"
+                    className="text-base font-medium text-foreground/80 hover:text-primary"
                   >
                     {s.title}
                   </Link>

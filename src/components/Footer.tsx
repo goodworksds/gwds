@@ -13,16 +13,16 @@ export default function Footer() {
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo variant="dark" />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
+          <p className="mt-4 max-w-xs text-base leading-relaxed text-white/70">
             {siteConfig.footerTagline}
           </p>
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-sun/99">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-sun/99">
             Explore
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-4 space-y-2.5 text-base">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -45,10 +45,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-sun/99">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-sun/99">
             Our Services
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-4 space-y-2.5 text-base">
             {services.map((service) => (
               <li key={service.slug}>
                 <Link
@@ -63,10 +63,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-sun/99">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-sun/99">
             Contact
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-white/80">
+          <ul className="mt-4 space-y-2.5 text-base text-white/80">
             <li>
               <a
                 href={siteConfig.phoneHref}
@@ -110,7 +110,7 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-white/10">
-        <Container className="py-6 text-xs text-white/50">
+        <Container className="py-6 text-sm text-white/50">
           <p>
             © {year} {siteConfig.name}. Template website. NDIS Provider.
           </p>

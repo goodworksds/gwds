@@ -34,10 +34,10 @@ export default function NdisInformationPage() {
                 <span className="font-serif text-3xl font-semibold text-gradient-sunrise">
                   {step.number}
                 </span>
-                <h3 className="mt-3 font-serif text-lg font-semibold text-foreground">
+                <h3 className="mt-3 font-serif text-xl font-semibold text-foreground">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                   {step.description}
                 </p>
               </div>
