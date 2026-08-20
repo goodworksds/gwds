@@ -34,6 +34,8 @@ Set these in `.env.local` for local dev, and in the Vercel project's
 | `CONTACT_EMAIL_TO` | No | Defaults to `admin@goodworksdisabilityservices.com.au`. |
 | `CONTACT_EMAIL_CC` | No | Defaults to `goodworksds@gmail.com`. |
 | `CONTACT_EMAIL_FROM` | No | Must be an address on a domain verified at [resend.com/domains](https://resend.com/domains). Until `goodworksdisabilityservices.com.au` is verified there, Resend runs in **sandbox mode** and can only deliver to the email address the Resend account itself was signed up with — not `CONTACT_EMAIL_TO`/`CC`, and not any other recipient. Defaults to Resend's shared testing sender, which has the same sandbox restriction. |
+| `ADMIN_PASSWORD` | Yes, for `/admin` | The password used to log in at `/admin/login`. Choose your own. |
+| `ADMIN_SESSION_SECRET` | Yes, for `/admin` | A long random string used to sign the admin login session cookie. Generate one with `openssl rand -hex 32`. |
 
 ## Deployment (Vercel)
 
@@ -64,6 +66,19 @@ which:
    fails, the submission is still saved — email delivery failure never
    blocks storing the enquiry.
 
+## Admin dashboard
+
+`/admin` lists every contact form submission (name, phone, service, message,
+date/time), newest first, with **Delete** (removes it from MongoDB) and
+**Reply** (emails the customer directly from the dashboard, via Resend)
+actions on each one.
+
+It's protected by a password login at `/admin/login` — not linked from any
+public page, and enforced by `src/proxy.ts` for both the `/admin` pages
+and the `/api/admin/*` routes behind them, so the data can't be reached
+without logging in first. Requires `ADMIN_PASSWORD` and
+`ADMIN_SESSION_SECRET` to be set (see the environment variables table above).
+
 ## Project structure
 
 ```
@@ -78,13 +93,21 @@ src/
     careers/page.tsx
     contact/page.tsx          Contact page (form + details)
     api/contact/route.ts      POST handler — validates, saves to MongoDB, emails via Resend
+    admin/page.tsx            Admin dashboard — list/delete/reply to submissions
+    admin/login/page.tsx      Admin login form
+    api/admin/login/route.ts  Verifies password, sets the session cookie
+    api/admin/logout/route.ts Clears the session cookie
+    api/admin/contacts/[id]/route.ts       DELETE handler
+    api/admin/contacts/[id]/reply/route.ts POST handler — emails the customer via Resend
   components/                 Header, Footer, Buttons, cards, form, etc.
   lib/
     site-data.ts               All page copy/content in one place
     mongodb.ts                  Cached Mongoose connection helper
+    adminAuth.ts                Session token sign/verify (used by proxy.ts too)
     utils.ts
   models/
     ContactSubmission.ts        Mongoose schema
+proxy.ts                  Guards /admin and /api/admin/* behind the login
 ```
 
 Site copy, services, FAQs, testimonials, career listings, etc. all live in
