@@ -49,7 +49,7 @@ export const services: Service[] = [
       "Skill-building for greater independence",
     ],
     detailBody: [
-      { type: "heading", text: "Daily Living Assistance" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Daily Living Assistance</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we provide personalised <strong className='font-extrabold'>Daily Living Assistance</strong> to help people manage everyday activities with greater confidence, dignity and independence.",
@@ -86,7 +86,7 @@ export const services: Service[] = [
       "Confidence and social skill development",
     ],
     detailBody: [
-      { type: "heading", text: "Community Participation" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Community Participation</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe that being part of the community is an important part of living a fulfilling, connected and valued life.",
@@ -139,7 +139,7 @@ export const services: Service[] = [
       "Building everyday household skills",
     ],
     detailBody: [
-      { type: "heading", text: "Household Tasks" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Household Tasks</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we provide practical and respectful support with everyday household tasks to help people maintain a <strong className='font-extrabold'>safe, clean, comfortable and well-organised home environment</strong>.",
@@ -200,7 +200,7 @@ export const services: Service[] = [
       "Specialist Support Coordination available",
     ],
     detailBody: [
-      { type: "heading", text: "High Intensity Daily Personal Activities" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>High Intensity Daily Personal Activities</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we provide respectful, person-centred support for people who require <strong className='font-extrabold'>high-intensity assistance with daily personal activities</strong> due to complex or significant support needs.",
@@ -272,7 +272,7 @@ export const services: Service[] = [
       "Support to build household independence",
     ],
     detailBody: [
-      { type: "heading", text: "Assistance to Access and Maintain Employment or Higher Education" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Assistance to Access and Maintain Employment or Higher Education</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe that everyone should have the opportunity to pursue meaningful employment, education and personal development.",
@@ -344,7 +344,7 @@ export const services: Service[] = [
       "Hospital discharge and transition support",
     ],
     detailBody: [
-      { type: "heading", text: "Assistance with Life Stages, Transitions and Supports – Registration Group 0106" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Assistance with Life Stages, Transitions and Supports – Registration Group 0106</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we understand that life can bring periods of change and transition that may require additional guidance, planning and support. Our <strong className='font-extrabold'>Assistance with Life Stages, Transitions and Supports</strong> service is designed to help people navigate these changes with greater confidence, choice and control.",
@@ -412,7 +412,7 @@ export const services: Service[] = [
       "Assistance with life-stage transitions",
     ],
     detailBody: [
-      { type: "heading", text: "Community Nursing Care" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Community Nursing Care</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we provide professional and person-centred <strong className='font-extrabold'>Community Nursing Care</strong> to support people with disability to manage their health and wellbeing while living in their own homes and participating in their communities.",
@@ -482,7 +482,7 @@ export const services: Service[] = [
       "Assistance with life-stage transitions",
     ],
     detailBody: [
-      { type: "heading", text: "Assistance with Travel & Transport" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Assistance with Travel & Transport</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe that access to safe and reliable transport plays an important role in helping people live independently, participate in their community and pursue the activities that are meaningful to them.",
@@ -550,7 +550,7 @@ export const services: Service[] = [
       "Assistance with life-stage transitions",
     ],
     detailBody: [
-      { type: "heading", text: "Innovative Community Participation" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Innovative Community Participation</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe everyone should have the opportunity to discover their interests, develop their abilities and experience meaningful connection within their community.",
@@ -631,7 +631,7 @@ export const services: Service[] = [
       "Assistance with life-stage transitions",
     ],
     detailBody: [
-      { type: "heading", text: "Development of Daily Living and Life Skills - Registration Group 0117" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Development of Daily Living and Life Skills - Registration Group 0117</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe that developing everyday skills can create greater confidence, independence and choice. Our <strong className='font-extrabold'>Development of Daily Living and Life Skills</strong> supports are designed to help people build practical skills that enable them to participate more independently in their home, community and everyday life.",
@@ -714,7 +714,7 @@ export const services: Service[] = [
       "Assistance with life-stage transitions",
     ],
     detailBody: [
-      { type: "heading", text: "Specialised Supported Employment – Registration Group 0133" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Specialised Supported Employment – Registration Group 0133</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe that every person should have opportunities to develop their skills, contribute meaningfully and experience the confidence and sense of purpose that comes through participation in work.",
@@ -809,7 +809,7 @@ export const services: Service[] = [
       "Assistance with life-stage transitions",
     ],
     detailBody: [
-      { type: "heading", text: "Group & Centre-Based Activities – Registration Group 0136" },
+      { type: "heading", text: "<strong className='text-primary uppercase font-bold'>Group & Centre-Based Activities – Registration Group 0136</strong>" },
       {
         type: "paragraph",
         text: "At <strong className='font-extrabold'>Good Works Disability Services (GWDS)</strong>, we believe that meaningful activities, social connection and opportunities to learn can play an important role in building confidence, wellbeing and independence.",
@@ -937,9 +937,9 @@ export type AboutSection = {
 
 export const aboutSections: AboutSection[] = [
   {
-    slug: "our-story",
-    title: "Our Story",
-    tagline: "How Good Works Disability Services came to be",
+    slug: "who-we-are",
+    title: "Who We Are",
+    tagline: "GWDS is committed to providing person-centred, compassionate and professional support that respects the individuality, choices and dignity of every person.",
   },
   {
     slug: "mission",
@@ -952,19 +952,14 @@ export const aboutSections: AboutSection[] = [
     tagline: "To lead with love in action and truth, creating a caring community where respect, integrity, confidentiality, growth, safety, harmony, and passion inspire every life we touch.",
   },
   {
-    slug: "our-values",
-    title: "Our Values",
-    tagline: "The five words that shape every shift",
+    slug: "our-philosophy",
+    title: "Our Philosophy",
+    tagline: "LOVE IN ACTION & TRUTH",
   },
   {
-    slug: "meet-our-team",
-    title: "Meet Our Team",
-    tagline: "The people behind your support",
-  },
-  {
-    slug: "why-choose-us",
-    title: "Why Choose Us",
-    tagline: "The professionalism of a big provider, the warmth of a small team",
+    slug: "our-commitment",
+    title: "Our Commitment",
+    tagline: "TWe value the dignity, individuality, choices and rights of every person",
   },
 ];
 

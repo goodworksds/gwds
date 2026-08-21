@@ -14,9 +14,8 @@ export default function HomePage() {
           <div>
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Where Love Inspires,{" "}
-              <span className="text-gradient-sunrise">
-                Truth Guides and Lives Thrive
-              </span>
+              <span className="text-gradient-sunrise">Truth Guides and</span>{" "}
+              Lives <span className="text-gradient-sunrise">Thrive</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
               Good Works Disability Services delivers warm, practical disability
@@ -91,11 +90,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-12 sm:py-16 hide">
         <Container>
           <SectionHeading
             align="center"
-            title="What families tell us"
+            title="What our clients tell us"
             className="mx-auto"
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">

@@ -20,7 +20,23 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="About Us"
             title="Love in Action. Truth in Everything We Do."
-            description="We combine the professionalism of a large provider with the warmth and flexibility of a small, tight-knit team."
+            description={
+              <>
+                At{" "}
+                <strong className="font-extrabold">
+                  Good Works Disability Services (GWDS)
+                </strong>
+                , we are passionate about supporting people with diverse needs
+                and making a meaningful difference in their lives.
+                <br />
+                <br />
+                We believe every person is uniquely created with purpose,
+                strengths and potential. Our focus is not on what a person
+                cannot do, but on recognising their abilities, supporting their
+                aspirations and empowering them to live a fulfilling and valued
+                life.
+              </>
+            }
             light
           />
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
@@ -35,143 +51,150 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section id="our-story" className="scroll-mt-32 py-12 sm:py-16">
-        <Container className="grid gap-6 lg:grid-cols-3">
+      <section id="who-we-are" className="scroll-mt-32 py-12 sm:py-16">
+        <Container className="grid gap-6 lg:grid-cols-2">
           <div className="lg:col-span-2">
-            <h2 className="font-serif text-2xl font-semibold text-foreground">
-              Our story
+            <h2 className="font-serif text-xl text-primary uppercase font-bold">
+              Who We Are
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Good Works Disability Services was founded by support workers who
-              wanted to do things differently — smaller caseloads, better
-              matching, and coordinators who answer the phone. Today we support
-              participants across metropolitan Melbourne with services that
-              span everyday living through to complex clinical care.
+              GWDS is committed to providing person-centred, compassionate and
+              professional support that respects the individuality, choices and
+              dignity of every person.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              While people receiving disability support are commonly referred to
+              as participants or clients, we prefer the term “differently
+              abled.” We believe this reflects our conviction that disability
+              does not define a person. Every individual has unique abilities,
+              gifts and potential, and deserves to be treated with dignity,
+              respect and understanding.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-12 sm:py-16">
+      <section
+        id="mission"
+        className="bg-secondary/60 scroll-mt-32 py-12 sm:py-16"
+      >
         <Container className="grid gap-8 sm:grid-cols-2">
-          <div id="mission" className="scroll-mt-32 rounded-2xl border border-border bg-card p-8 shadow-soft">
-            <h3 className="font-serif text-2xl font-semibold text-foreground">
+          <div className="lg:col-span-2">
+            <h3 className="font-serif text-xl text-primary uppercase font-bold">
               Mission
             </h3>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              To provide the highest quality support and services that empower people living with a disability to lead a fulfilling and valued.
+              To provide the highest quality support and services that empower
+              people living with a disability to lead a fulfilling and valued.
             </p>
           </div>
-          <div id="vision" className="scroll-mt-32 rounded-2xl border border-border bg-card p-8 shadow-soft">
-            <h3 className="font-serif text-2xl font-semibold text-foreground">
+        </Container>
+      </section>
+
+      <section id="vision" className="scroll-mt-32 py-12 sm:py-16">
+        <Container className="grid gap-8 sm:grid-cols-2">
+          <div className="lg:col-span-2">
+            <h3 className="font-serif text-xl text-primary uppercase font-bold">
               Vision
             </h3>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              To lead with love in action and truth, creating a caring community where respect,
-              integrity, confidentiality, growth, safety, harmony, and passion inspire every life we touch.
+              To lead with love in action and truth, creating a caring community
+              where respect, integrity, confidentiality, growth, safety,
+              harmony, and passion inspire every life we touch.
             </p>
           </div>
         </Container>
       </section>
 
-      <section id="our-values" className="scroll-mt-32 py-12 sm:py-16">
-        <Container>
-          <SectionHeading
-            eyebrow="Our Values"
-            title="The five words that shape every shift"
-            description="Our vision isn't just a line on a page — it's five values our team is trained and supported to live out daily."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {ourValues.map((value) => (
-              <div
-                key={value.title}
-                className="rounded-2xl border border-border bg-card p-6 shadow-soft"
-              >
-                <HeartHandshake className="h-6 w-6 text-primary" />
-                <h3 className="mt-4 font-serif text-xl font-semibold text-foreground">
-                  {value.title}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+      <section
+        id="our-philosophy"
+        className="bg-secondary/60 scroll-mt-32 py-12 sm:py-16"
+      >
+        <Container className="grid gap-6 lg:grid-cols-2">
+          <div className="lg:col-span-2">
+            <h2 className="font-serif text-xl text-primary uppercase font-bold">
+              Our Philosophy
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground font-bold">
+              Our philosophy is built around our guiding principle:
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-primary font-extrabold">
+              “LOVE IN ACTION & TRUTH”
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              For us, this means putting compassion into practice, building
+              relationships based on honesty and trust, and genuinely caring
+              about the people we support.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              We take the time to listen, understand individual needs and work
+              alongside each person to help them achieve their goals and enjoy
+              greater independence and participation in their community.
+            </p>
           </div>
         </Container>
       </section>
 
-      <section id="meet-our-team" className="scroll-mt-32 bg-secondary/60 py-12 sm:py-16">
-        <Container>
-          <SectionHeading
-            eyebrow="Meet Our Team"
-            title="The people behind your support"
-            description="A small, tight-knit team of coordinators, support workers and clinicians — not a call centre. Individual team profiles are coming soon."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {teamGroups.map((group) => (
-              <div
-                key={group.title}
-                className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft"
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-                  <Users className="h-5 w-5" />
-                </span>
-                <div>
-                  <h3 className="font-serif text-lg font-semibold text-foreground">
-                    {group.title}
-                  </h3>
-                  <p className="mt-1 text-base leading-relaxed text-muted-foreground">
-                    {group.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <section id="our-commitment" className="scroll-mt-32 py-12 sm:py-16">
+        <Container className="grid gap-8 sm:grid-cols-2">
+          <div className="lg:col-span-2">
+            <h3 className="font-serif text-xl text-primary uppercase font-bold">
+              Our Commitment
+            </h3>
+            <div className="mt-4 text-lg leading-relaxed text-muted-foreground font-bold">
+              We are committed to providing support that is:
+            </div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Respectful</h4>
+              We value the dignity, individuality, choices and rights of every
+              person.
+            </div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Honest & Trustworthy</h4>
+              We build strong relationships through openness, integrity and
+              genuine communication.
+            </div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Safe & Confidential</h4>
+              We respect privacy and confidentiality while creating a safe,
+              inclusive and harmonious environment.
+            </div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Person-Centred</h4>
+              We tailor our support around each individual's needs, preferences,
+              goals and aspirations.
+            </div>
 
-      <section id="why-choose-us" className="scroll-mt-32 py-12 sm:py-16">
-        <Container>
-          <SectionHeading
-            eyebrow="Why Choose Us"
-            title="The professionalism of a big provider, the warmth of a small team"
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {whyUs.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-border bg-card p-6 shadow-soft"
-              >
-                <h3 className="font-serif text-xl font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Empowering</h4>
+              We encourage independence, confidence, choice and control.
+            </div>
 
-      <section className="bg-secondary/60 py-12 sm:py-16">
-        <Container>
-          <SectionHeading
-            eyebrow="What we support"
-            title="The core supports our team delivers day in, day out."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
-            ))}
-          </div>
-          <div className="mt-10">
-            <Button
-              href="/services"
-              className="border-black bg-black hover:bg-white/90 text-ring"
-            >
-              See all services
-            </Button>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Compassionate</h4>
+              We provide support with kindness, patience, understanding and
+              genuine care.
+            </div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Focused on Growth</h4>
+              We are committed to continuous development and improvement in the
+              way we deliver our services.
+            </div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">
+              <h4 className="text-primary font-bold">Walking Alongside You</h4>
+              At GWDS, we believe disability support is more than simply
+              providing a service. It is about people, relationships and making
+              a difference.
+            </div>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              We are here to listen, support, encourage and walk alongside the
+              people we serve—helping them pursue their goals, discover their
+              strengths and live life with greater choice, confidence and
+              purpose.
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-primary font-extrabold">
+              Good Works Disability Services — Love in Action & Truth.
+            </p>
           </div>
         </Container>
       </section>

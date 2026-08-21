@@ -79,11 +79,15 @@ function DeleteConfirmDialog({
         <span className="flex h-11 w-11 items-center justify-center rounded-full bg-destructive/10 text-destructive">
           <AlertTriangle className="h-5 w-5" />
         </span>
-        <h2 id="delete-dialog-title" className="mt-4 font-serif text-xl font-semibold text-foreground">
+        <h2
+          id="delete-dialog-title"
+          className="mt-4 font-serif text-xl font-semibold text-foreground"
+        >
           Delete this message?
         </h2>
         <p className="mt-2 text-base text-muted-foreground">
-          The message from <span className="font-medium text-foreground">{submission.name}</span>{" "}
+          The message from{" "}
+          <span className="font-medium text-foreground">{submission.name}</span>{" "}
           will be permanently deleted. This cannot be undone.
         </p>
         <div className="mt-6 flex gap-3">
@@ -93,7 +97,11 @@ function DeleteConfirmDialog({
             disabled={isDeleting}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-destructive px-5 py-2.5 text-base font-semibold text-destructive-foreground shadow-soft disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {isDeleting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
+            {isDeleting ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Trash2 className="h-4 w-4" />
+            )}
             Delete
           </button>
           <button
@@ -121,7 +129,9 @@ export default function AdminMessagesTable({
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [replyOpenId, setReplyOpenId] = useState<string | null>(null);
   const [replyText, setReplyText] = useState("");
-  const [replyStatus, setReplyStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [replyStatus, setReplyStatus] = useState<
+    "idle" | "sending" | "sent" | "error"
+  >("idle");
   const [replyError, setReplyError] = useState("");
   const listTopRef = useRef<HTMLDivElement>(null);
 
@@ -148,7 +158,9 @@ export default function AdminMessagesTable({
     const id = deleteTargetId;
     setDeletingId(id);
     try {
-      const res = await fetch(`/api/admin/contacts/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/contacts/${id}`, {
+        method: "DELETE",
+      });
       if (res.ok) {
         setSubmissions((prev) => {
           const next = prev.filter((s) => s.id !== id);
@@ -210,14 +222,19 @@ export default function AdminMessagesTable({
 
   return (
     <>
-      <div ref={listTopRef} className="mb-8 flex items-center justify-between">
-        <h1 className="font-serif text-2xl font-semibold text-foreground">Contact Submissions</h1>
+      <div
+        ref={listTopRef}
+        className="scroll-mt-32 py-4 flex items-center justify-between"
+      >
+        <h1 className="font-serif text-2xl font-semibold text-foreground">
+          Contact Submissions
+        </h1>
         <AdminLogoutButton />
       </div>
 
       <p className="mb-6 text-base text-muted-foreground">
-        {submissions.length} message{submissions.length === 1 ? "" : "s"} received via the website
-        contact form.
+        {submissions.length} message{submissions.length === 1 ? "" : "s"}{" "}
+        received via the website contact form.
       </p>
 
       {submissions.length === 0 ? (
@@ -237,9 +254,15 @@ export default function AdminMessagesTable({
             >
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-serif text-xl font-semibold text-foreground">{s.name}</h3>
-                  <p className="mt-1 text-base text-muted-foreground">{s.email}</p>
-                  <p className="text-base text-muted-foreground">{s.phone || "No phone provided"}</p>
+                  <h3 className="font-serif text-xl font-semibold text-foreground">
+                    {s.name}
+                  </h3>
+                  <p className="mt-1 text-base text-muted-foreground">
+                    {s.email}
+                  </p>
+                  <p className="text-base text-muted-foreground">
+                    {s.phone || "No phone provided"}
+                  </p>
                   <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-primary">
                     {serviceLabel(s.service)}
                   </p>
@@ -288,7 +311,8 @@ export default function AdminMessagesTable({
                   </p>
                   {s.repliedMessage && (
                     <p className="mt-2 whitespace-pre-wrap rounded-xl bg-accent/10 p-4 text-base leading-relaxed text-foreground">
-                      <span className="font-semibold">Message:</span> {s.repliedMessage}
+                      <span className="font-semibold">Message:</span>{" "}
+                      {s.repliedMessage}
                     </p>
                   )}
                 </div>
@@ -304,7 +328,9 @@ export default function AdminMessagesTable({
                     className="w-full rounded-xl border border-input bg-card px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
                   {replyStatus === "error" && (
-                    <p className="mt-2 text-base font-medium text-destructive">{replyError}</p>
+                    <p className="mt-2 text-base font-medium text-destructive">
+                      {replyError}
+                    </p>
                   )}
                   <div className="mt-3 flex gap-3">
                     <button
