@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -15,13 +16,22 @@ export default function NdisInformationPage() {
   return (
     <>
       <section className="bg-gradient-deep py-12 sm:py-16">
-        <Container>
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <SectionHeading
             eyebrow="NDIS Information"
             title="The NDIS, explained without the jargon"
             description="Whether you're applying for the first time or preparing for a review, here's what you need to know."
             light
           />
+          <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
+            <Image
+              src="/images/placeholder-hero.svg"
+              alt="Placeholder image"
+              fill
+              unoptimized
+              className="object-cover"
+            />
+          </div>
         </Container>
       </section>
 

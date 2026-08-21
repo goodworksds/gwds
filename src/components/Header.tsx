@@ -76,25 +76,27 @@ function DesktopNavDropdown({
       {isOpen && (
         <div className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3">
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lift">
-            {items.map((item, index) => {
-              const isLast = index === items.length - 1;
-              const isViewAll = item.label.startsWith("View all");
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={onClose}
-                  className={cn(
-                    "block px-5 py-3 text-base font-medium text-foreground/85 hover:bg-secondary hover:text-primary",
-                    isLast &&
-                      isViewAll &&
-                      "border-t border-border font-semibold text-primary",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+            <div className="max-h-[50vh] overflow-y-auto">
+              {items.map((item, index) => {
+                const isLast = index === items.length - 1;
+                const isViewAll = item.label.startsWith("View all");
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={onClose}
+                    className={cn(
+                      "block px-5 py-3 text-base font-medium text-foreground/85 hover:bg-secondary hover:text-primary",
+                      isLast &&
+                        isViewAll &&
+                        "border-t border-border font-semibold text-primary",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
@@ -148,7 +150,7 @@ function MobileNavDropdown({
         </button>
       </div>
       {isOpen && (
-        <div className="ml-3 flex flex-col gap-1 border-l border-border pl-3">
+        <div className="ml-3 flex max-h-[50vh] flex-col gap-1 overflow-y-auto border-l border-border pl-3">
           {items.map((item) => (
             <Link
               key={item.href}

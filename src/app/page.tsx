@@ -13,8 +13,10 @@ export default function HomePage() {
         <Container className="grid gap-12 py-14 lg:grid-cols-2 lg:items-center lg:py-16">
           <div>
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Support that rises with you,{" "}
-              <span className="text-gradient-sunrise">every day</span>
+              Where Love Inspires,{" "}
+              <span className="text-gradient-sunrise">
+                Truth Guides and Lives Thrive
+              </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
               Good Works Disability Services delivers warm, practical disability

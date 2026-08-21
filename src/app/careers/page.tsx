@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
@@ -15,13 +16,22 @@ export default function CareersPage() {
   return (
     <>
       <section className="bg-gradient-deep py-12 sm:py-16">
-        <Container>
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <SectionHeading
             eyebrow="Careers"
             title="Become a Life Changer"
             description="We're always looking for warm, reliable people who want support work to be a career, not a stopgap."
             light
           />
+          <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
+            <Image
+              src="/images/placeholder-hero.svg"
+              alt="Placeholder image"
+              fill
+              unoptimized
+              className="object-cover"
+            />
+          </div>
         </Container>
       </section>
 

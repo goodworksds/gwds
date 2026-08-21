@@ -11,6 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Service } from "@/lib/site-data";
+import { renderRichText } from "@/lib/richText";
 
 const icons: Record<string, LucideIcon> = {
   "daily-living": HeartHandshake,
@@ -36,11 +37,8 @@ export default function ServiceCard({ service }: { service: Service }) {
       <h3 className="mt-5 font-serif text-2xl font-semibold text-foreground">
         {service.title}
       </h3>
-      <p className="mt-2 text-base font-medium text-muted-foreground">
-        {service.tagline}
-      </p>
       <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-        {service.description}
+        {renderRichText(service.description)}
       </p>
       <span className="mt-5 inline-flex items-center gap-1.5 text-base font-semibold text-primary">
         Learn more
