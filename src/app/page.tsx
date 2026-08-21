@@ -71,7 +71,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 hide">
             {whyUs.map((item) => (
               <div
                 key={item.title}
