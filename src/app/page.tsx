@@ -30,7 +30,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
+          <div className="relative mx-auto aspect-[16/12] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
               src="/images/home-1.jpeg"
               alt="A support worker sharing a warm moment with a participant"
