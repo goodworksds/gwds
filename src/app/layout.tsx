@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   );

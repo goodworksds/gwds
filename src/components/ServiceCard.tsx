@@ -4,10 +4,15 @@ import {
   HeartHandshake,
   Users,
   Home,
-  ClipboardList,
-  Building2,
-  Layers,
   Stethoscope,
+  HeartPulse,
+  GraduationCap,
+  Milestone,
+  Car,
+  Sparkles,
+  ListChecks,
+  Briefcase,
+  UsersRound,
   type LucideIcon,
 } from "lucide-react";
 import type { Service } from "@/lib/site-data";
@@ -17,10 +22,15 @@ const icons: Record<string, LucideIcon> = {
   "daily-living": HeartHandshake,
   "community-participation": Users,
   "household-tasks": Home,
-  "support-coordination": ClipboardList,
-  sil: Building2,
-  "nursing-complex-care": Stethoscope,
-  "more-services": Layers,
+  "high-intensity-daily-personal-activities": HeartPulse,
+  "employment-higher-education": GraduationCap,
+  "life-stages-transitions-supports": Milestone,
+  "community-nursing-care": Stethoscope,
+  "travel-transport": Car,
+  "innovative-community-participation": Sparkles,
+  "daily-living-life-skills-development": ListChecks,
+  "specialised-supported-employment": Briefcase,
+  "group-centre-based-activities": UsersRound,
 };
 
 export default function ServiceCard({ service }: { service: Service }) {
