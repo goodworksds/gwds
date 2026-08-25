@@ -69,7 +69,7 @@ export default function AdminLoginPage() {
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-sunrise px-6 py-3 text-base font-semibold text-white shadow-soft transition-all duration-200 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-sunrise px-6 py-3 text-base font-semibold text-white shadow-soft transition-all duration-200 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-70"
         >
           {loading && <Loader2 className="h-4 w-4 animate-spin" />}
           Sign in

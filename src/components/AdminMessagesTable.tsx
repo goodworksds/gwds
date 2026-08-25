@@ -95,7 +95,7 @@ function DeleteConfirmDialog({
             type="button"
             onClick={onConfirm}
             disabled={isDeleting}
-            className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-destructive px-5 py-2.5 text-base font-semibold text-destructive-foreground shadow-soft disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full bg-destructive px-5 py-2.5 text-base font-semibold text-destructive-foreground shadow-soft disabled:cursor-not-allowed disabled:opacity-70"
           >
             {isDeleting ? (
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -108,7 +108,7 @@ function DeleteConfirmDialog({
             type="button"
             onClick={onCancel}
             disabled={isDeleting}
-            className="flex-1 rounded-full border border-border px-5 py-2.5 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-70"
+            className="flex-1 cursor-pointer rounded-full border border-border px-5 py-2.5 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-70"
           >
             Cancel
           </button>
@@ -284,7 +284,7 @@ export default function AdminMessagesTable({
                   className={
                     s.replied
                       ? "inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-base font-medium text-accent opacity-70"
-                      : "inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary"
+                      : "inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary"
                   }
                 >
                   {s.replied ? (
@@ -297,7 +297,7 @@ export default function AdminMessagesTable({
                 <button
                   type="button"
                   onClick={() => setDeleteTargetId(s.id)}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-destructive/30 px-4 py-2 text-base font-medium text-destructive hover:bg-destructive/10"
+                  className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-destructive/30 px-4 py-2 text-base font-medium text-destructive hover:bg-destructive/10"
                 >
                   <Trash2 className="h-4 w-4" />
                   Delete
@@ -337,7 +337,7 @@ export default function AdminMessagesTable({
                       type="button"
                       onClick={() => handleSendReply(s.id)}
                       disabled={replyStatus === "sending" || !replyText.trim()}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-gradient-sunrise px-5 py-2 text-base font-semibold text-white shadow-soft disabled:cursor-not-allowed disabled:opacity-60"
+                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-gradient-sunrise px-5 py-2 text-base font-semibold text-white shadow-soft disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {replyStatus === "sending" ? (
                         <Loader2 className="h-4 w-4 animate-spin" />
@@ -349,7 +349,7 @@ export default function AdminMessagesTable({
                     <button
                       type="button"
                       onClick={() => setReplyOpenId(null)}
-                      className="rounded-full px-5 py-2 text-base font-medium text-muted-foreground hover:bg-secondary"
+                      className="cursor-pointer rounded-full px-5 py-2 text-base font-medium text-muted-foreground hover:bg-secondary"
                     >
                       Cancel
                     </button>
@@ -367,7 +367,7 @@ export default function AdminMessagesTable({
             type="button"
             onClick={() => goToPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
           >
             <ChevronLeft className="h-4 w-4" />
             Previous
@@ -379,7 +379,7 @@ export default function AdminMessagesTable({
             type="button"
             onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-border px-4 py-2 text-base font-medium text-foreground hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
           >
             Next
             <ChevronRight className="h-4 w-4" />

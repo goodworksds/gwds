@@ -16,7 +16,7 @@ export default function AdminLogoutButton() {
     <button
       type="button"
       onClick={handleLogout}
-      className="inline-flex items-center gap-1.5 text-base font-medium text-muted-foreground hover:text-primary"
+      className="inline-flex cursor-pointer items-center gap-1.5 text-base font-medium text-muted-foreground hover:text-primary"
     >
       <LogOut className="h-4 w-4" />
       Log out
