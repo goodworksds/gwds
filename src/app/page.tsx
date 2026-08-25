@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
+import HeroCarousel from "@/components/HeroCarousel";
 import { services, testimonials, whyUs } from "@/lib/site-data";
 
 export default function HomePage() {
@@ -30,16 +30,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[16/12] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
-            <Image
-              src="/images/home-1.jpeg"
-              alt="A support worker sharing a warm moment with a participant"
-              fill
-              priority
-              unoptimized
-              className="object-cover"
-            />
-          </div>
+          <HeroCarousel />
         </Container>
       </section>
 
