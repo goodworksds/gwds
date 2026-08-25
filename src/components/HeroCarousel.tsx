@@ -61,7 +61,7 @@ export default function HeroCarousel() {
         type="button"
         aria-label="Previous image"
         onClick={() => goTo(index - 1)}
-        className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/80 text-foreground shadow-soft transition-colors hover:bg-white"
+        className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gradient-sunrise text-white shadow-soft transition-all hover:brightness-105"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
@@ -69,7 +69,7 @@ export default function HeroCarousel() {
         type="button"
         aria-label="Next image"
         onClick={() => goTo(index + 1)}
-        className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/80 text-foreground shadow-soft transition-colors hover:bg-white"
+        className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gradient-sunrise text-white shadow-soft transition-all hover:brightness-105"
       >
         <ChevronRight className="h-5 w-5" />
       </button>
@@ -83,7 +83,9 @@ export default function HeroCarousel() {
             onClick={() => goTo(i)}
             className={cn(
               "h-2 cursor-pointer rounded-full transition-all",
-              i === index ? "w-6 bg-white" : "w-2 bg-white/50 hover:bg-white/75",
+              i === index
+                ? "w-6 bg-gradient-sunrise"
+                : "w-2 bg-white/50 hover:bg-white/75",
             )}
           />
         ))}
