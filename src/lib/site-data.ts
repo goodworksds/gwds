@@ -43,7 +43,7 @@ export const services: Service[] = [
     description:
       "Personalised support with daily routines, personal care, meal preparation, household tasks and community participation, helping people live with greater confidence, dignity and independence. \n \n <strong className='font-extrabold'>Supporting independence. Building confidence. Living with choice and dignity.</strong>",
     heroImage: "/images/daily-living-assistance.jpg",
-      bullets: [
+    bullets: [
       "Personal care, hygiene and dressing support",
       "Meal planning, preparation and healthy eating",
       "Medication prompting and health appointments",
@@ -80,6 +80,7 @@ export const services: Service[] = [
     title: "Community Participation",
     description:
       "Supporting people to participate in social, recreational, cultural and community activities that reflect their interests and goals, while building confidence, independence and meaningful connections.\n\n<strong className='font-extrabold'>Supporting people to connect, participate, belong and live life with confidence and purpose.</strong>",
+    heroImage: "/images/community-participation.jpg",
     bullets: [
       "Social outings, sport, art and hobby groups",
       "Transport to and from activities",
@@ -134,7 +135,7 @@ export const services: Service[] = [
     description:
       "Practical assistance with everyday household tasks such as cleaning, laundry, meal preparation, tidying and maintaining a safe and comfortable home environment.\n\n<strong className='font-extrabold'>Practical support with genuine care—helping people maintain their home with confidence and dignity.</strong>",
     heroImage: "/images/houseshold-tasks.png",
-      bullets: [
+    bullets: [
       "Cleaning, laundry and general tidying",
       "Grocery shopping and errands",
       "Garden and outdoor maintenance support",
@@ -268,6 +269,7 @@ export const services: Service[] = [
     title: "Employment & Higher Education",
     description:
       "Supporting people to pursue employment, training and higher education by developing workplace and study skills, confidence and independence.\n\n<strong className='font-extrabold'>Building confidence. Supporting aspirations. Creating pathways to employment and education.</strong>",
+    heroImage: "/images/employment.png",
     bullets: [
       "24/7 and active overnight support",
       "Vacancy matching and trial stays",
@@ -340,6 +342,7 @@ export const services: Service[] = [
     title: "Life Stages, Transitions & Supports",
     description:
       "Helping people navigate significant life changes and transitions through personalised planning, guidance and support that promotes independence, choice and confidence.\n\n<strong className='font-extrabold'>Supporting life's transitions with compassion, clarity and care.</strong>",
+    heroImage: "/images/life-stages-transitions-supports.png",
     bullets: [
       "Registered nurse assessments and care plans",
       "PEG feeding, catheter and stoma care",
@@ -408,6 +411,7 @@ export const services: Service[] = [
     title: "Community Nursing Care",
     description:
       "Professional nursing support for people with disability, delivered in the home and community to promote health, safety, dignity, comfort and quality of life.\n\n<strong className='font-extrabold'>Professional nursing care with compassion—supporting health, dignity and wellbeing.</strong>",
+    heroImage: "/images/community-nursing-care.png",
     bullets: [
       "Short Term Accommodation (STA) and respite",
       "Medium Term Accommodation (MTA)",
@@ -478,6 +482,7 @@ export const services: Service[] = [
     title: "Travel & Transport",
     description:
       "Helping people overcome transport-related barriers and develop the confidence and skills needed to travel more safely and independently.\n\n<strong className='font-extrabold'>Opening pathways to greater independence—helping people travel, connect and participate with confidence.</strong>",
+    heroImage: "/images/travel-transport.png",
     bullets: [
       "Short Term Accommodation (STA) and respite",
       "Medium Term Accommodation (MTA)",
@@ -546,6 +551,7 @@ export const services: Service[] = [
     title: "Innovative Community Participation",
     description:
       "Creating personalised opportunities to explore interests, try new experiences, develop skills and build meaningful connections within the community.\n\n<strong className='font-extrabold'>Creating opportunities. Building confidence. Discovering possibilities.</strong>",
+    heroImage: "/images/Innovative-community-participation.png",
     bullets: [
       "Short Term Accommodation (STA) and respite",
       "Medium Term Accommodation (MTA)",
@@ -627,6 +633,7 @@ export const services: Service[] = [
     title: "Daily Living & Life Skills Development",
     description:
       "Helping people develop practical everyday skills such as cooking, shopping, budgeting, planning, communication and household routines to promote greater independence.\n\n<strong className='font-extrabold'>Building skills. Growing confidence. Empowering independence—one step at a time.</strong>",
+    heroImage: "/images/daily-living-life-skills-development.png",
     bullets: [
       "Short Term Accommodation (STA) and respite",
       "Medium Term Accommodation (MTA)",
@@ -710,6 +717,7 @@ export const services: Service[] = [
     title: "Specialised Supported Employment",
     description:
       "Providing tailored support for people who require assistance to participate in a specialised supported employment environment, with a focus on workplace skills, confidence and meaningful contribution.\n\n<strong className='font-extrabold'>Creating opportunities to contribute, building workplace confidence and supporting employment goals.</strong>",
+    heroImage: "/images/specialised-supported-employment.png",
     bullets: [
       "Short Term Accommodation (STA) and respite",
       "Medium Term Accommodation (MTA)",
@@ -805,6 +813,7 @@ export const services: Service[] = [
     title: "Group & Centre-Based Activities",
     description:
       "Providing inclusive opportunities to socialise, learn new skills, explore interests and participate in meaningful activities through supportive group and centre-based programs.\n\n<strong className='font-extrabold'>Creating meaningful connections. Building skills. Celebrating abilities.</strong>",
+    heroImage: "/images/group-centre-based-activities.jpeg",
     bullets: [
       "Short Term Accommodation (STA) and respite",
       "Medium Term Accommodation (MTA)",

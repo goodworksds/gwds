@@ -19,7 +19,10 @@ function getService(slug: string) {
 function renderDetailBlock(block: ServiceDetailBlock, index: number) {
   if (block.type === "paragraph") {
     return (
-      <p key={index} className="mt-5 text-lg leading-relaxed text-muted-foreground first:mt-0">
+      <p
+        key={index}
+        className="mt-5 text-lg leading-relaxed text-muted-foreground first:mt-0"
+      >
         {renderRichText(block.text)}
       </p>
     );
@@ -27,7 +30,10 @@ function renderDetailBlock(block: ServiceDetailBlock, index: number) {
 
   if (block.type === "heading") {
     return (
-      <h3 key={index} className="mt-8 font-serif text-xl font-semibold text-foreground first:mt-0">
+      <h3
+        key={index}
+        className="mt-8 font-serif text-xl font-semibold text-foreground first:mt-0"
+      >
         {renderRichText(block.text)}
       </h3>
     );
@@ -51,7 +57,10 @@ function renderDetailBlock(block: ServiceDetailBlock, index: number) {
   }
 
   return (
-    <p key={index} className="mt-5 text-lg font-semibold text-primary first:mt-0">
+    <p
+      key={index}
+      className="mt-5 text-lg font-semibold text-primary first:mt-0"
+    >
       {renderRichText(block.text)}
     </p>
   );
@@ -113,7 +122,9 @@ export default async function ServiceDetailPage({
         <Container className="grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2">
             {service.detailBody ? (
-              service.detailBody.map((block, index) => renderDetailBlock(block, index))
+              service.detailBody.map((block, index) =>
+                renderDetailBlock(block, index),
+              )
             ) : (
               <>
                 <h2 className="font-serif text-2xl font-semibold text-foreground">
@@ -156,6 +167,15 @@ export default async function ServiceDetailPage({
                 </li>
               ))}
             </ul>
+            <div className="mt-8 relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-2xl shadow-lift">
+              <Image
+                src={"/images/placeholder-hero.svg"}
+                alt={service.heroImage ? service.title : "Placeholder image"}
+                fill
+                unoptimized
+                className="object-cover"
+              />
+            </div>
           </aside>
         </Container>
       </section>

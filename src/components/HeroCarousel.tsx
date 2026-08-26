@@ -7,20 +7,40 @@ import { cn } from "@/lib/utils";
 
 const slides = [
   {
-    src: "/images/home-1.jpeg",
-    alt: "A support worker sharing a warm moment with a participant",
+    src: "/images/hero-1.jpg",
+    alt: "Children and support workers laughing together while blowing bubbles at an outdoor picnic in the park",
   },
   {
-    src: "/images/home-2.jpeg",
-    alt: "A support worker assisting a participant in a wheelchair",
+    src: "/images/hero-2.jpg",
+    alt: "A support worker in scrubs fist-bumping a girl in a wheelchair in a hallway, with her father alongside",
   },
   {
-    src: "/images/istockphoto-1321871936-612x612.jpg",
-    alt: "A support worker helping a participant walk, with her granddaughter alongside",
+    src: "/images/hero-3.jpg",
+    alt: "A support worker standing behind a smiling young man in his wheelchair in a bright indoor hallway",
   },
   {
-    src: "/images/istockphoto-948785952-612x612.jpg",
-    alt: "A support worker helping a participant with her jacket outdoors",
+    src: "/images/hero-4.jpg",
+    alt: "A young man painting on an easel outdoors while a support worker joins in beside him",
+  },
+  {
+    src: "/images/hero-5.jpg",
+    alt: "A young man and a woman in a wheelchair laughing together while playing pickleball on an outdoor court",
+  },
+  {
+    src: "/images/hero-6.jpg",
+    alt: "A man and a support worker preparing a meal together, chopping vegetables in a kitchen",
+  },
+  {
+    src: "/images/hero-7.jpg",
+    alt: "A support worker helping an older woman walk with a frame while a young girl walks alongside them",
+  },
+  {
+    src: "/images/hero-8.jpg",
+    alt: "A support worker kneeling to talk with a young man seated in his wheelchair",
+  },
+  {
+    src: "/images/community-participation.jpg",
+    alt: "Supporting people to participate in social, recreational, cultural and community activities",
   },
 ];
 
