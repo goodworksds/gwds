@@ -140,7 +140,7 @@ export default async function ServiceDetailPage({
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-border bg-secondary/60 p-7">
+          <aside className="rounded-2xl border border-border bg-secondary/60 p-7 lg:sticky lg:top-28 lg:self-start">
             <h3 className="font-serif text-xl font-semibold text-foreground">
               Other services
             </h3>
