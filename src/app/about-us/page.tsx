@@ -41,8 +41,8 @@ export default function AboutPage() {
           />
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/placeholder-hero.svg"
-              alt="Placeholder image"
+              src="/images/why-us.jpg"
+              alt="Love in Action. Truth in Everything We Do"
               fill
               unoptimized
               className="object-cover"

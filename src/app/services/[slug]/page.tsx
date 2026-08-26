@@ -108,7 +108,7 @@ export default async function ServiceDetailPage({
           </div>
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src={service.heroImage ?? "/images/placeholder-hero.svg"}
+              src={service.heroImage ?? "/images/services.jpg"}
               alt={service.heroImage ? service.title : "Placeholder image"}
               fill
               unoptimized
@@ -169,8 +169,12 @@ export default async function ServiceDetailPage({
             </ul>
             <div className="mt-8 relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-2xl shadow-lift">
               <Image
-                src={"/images/placeholder-hero.svg"}
-                alt={service.heroImage ? service.title : "Placeholder image"}
+                src={"/images/services.jpg"}
+                alt={
+                  service.heroImage
+                    ? service.title
+                    : "Our services focus on dignity, independence, confidence and meaningful participation, helping each person live a fulfilling and valued life."
+                }
                 fill
                 unoptimized
                 className="object-cover"
