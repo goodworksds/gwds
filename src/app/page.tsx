@@ -60,7 +60,7 @@ export default function HomePage() {
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
               <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
                 <Image
-                  src="/images/why-us.png"
+                  src="/images/why-us.jpg"
                   alt="Placeholder image"
                   fill
                   unoptimized
