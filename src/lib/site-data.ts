@@ -33,6 +33,7 @@ export type Service = {
   description: string;
   bullets: string[];
   detailBody?: ServiceDetailBlock[];
+  heroImage?: string;
 };
 
 export const services: Service[] = [
@@ -41,7 +42,8 @@ export const services: Service[] = [
     title: "Daily Living Assistance & Supported Independent Living",
     description:
       "Personalised support with daily routines, personal care, meal preparation, household tasks and community participation, helping people live with greater confidence, dignity and independence. \n \n <strong className='font-extrabold'>Supporting independence. Building confidence. Living with choice and dignity.</strong>",
-    bullets: [
+    heroImage: "/images/daily-living-assistance.jpg",
+      bullets: [
       "Personal care, hygiene and dressing support",
       "Meal planning, preparation and healthy eating",
       "Medication prompting and health appointments",
@@ -131,7 +133,8 @@ export const services: Service[] = [
     title: "Household Tasks",
     description:
       "Practical assistance with everyday household tasks such as cleaning, laundry, meal preparation, tidying and maintaining a safe and comfortable home environment.\n\n<strong className='font-extrabold'>Practical support with genuine care—helping people maintain their home with confidence and dignity.</strong>",
-    bullets: [
+    heroImage: "/images/houseshold-tasks.png",
+      bullets: [
       "Cleaning, laundry and general tidying",
       "Grocery shopping and errands",
       "Garden and outdoor maintenance support",
@@ -191,7 +194,8 @@ export const services: Service[] = [
     slug: "high-intensity-daily-personal-activities",
     title: "High Intensity Daily Personal Activities",
     description:
-      "Specialised, person-centred support for people who require high-intensity assistance with complex daily personal activities, delivered with dignity, safety and respect.\n\n<strong className='font-extrabold'>Skilled support. Compassionate care. Empowering people to live with dignity and confidence</strong>.", 
+      "Specialised, person-centred support for people who require high-intensity assistance with complex daily personal activities, delivered with dignity, safety and respect.\n\n<strong className='font-extrabold'>Skilled support. Compassionate care. Empowering people to live with dignity and confidence</strong>.",
+    heroImage: "/images/high-intensity-daily-personal-activities.png",
     bullets: [
       "Understanding and implementing your NDIS plan",
       "Sourcing and comparing quality providers",

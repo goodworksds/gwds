@@ -1,5 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 import Container from "@/components/Container";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
@@ -50,12 +51,33 @@ export default function HomePage() {
       </section>
 
       <section className="bg-secondary/60 py-12 sm:py-16">
-        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <Container className="w-full">
           <div>
             <SectionHeading
               eyebrow="Why us"
               title="The professionalism of a big provider, the warmth of a small team"
             />
+            <div className="mt-12 grid gap-6 sm:grid-cols-2">
+              <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
+                <Image
+                  src="/images/why-us.png"
+                  alt="Placeholder image"
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
+              </div>
+              <div className="py-2">
+                At GWDS, we put{" "}
+                <strong className="font-extrabold text-primary">
+                  "LOVE IN ACTION & TRUTH”
+                </strong>{" "}
+                into practice through compassionate, person-centred support that
+                respects individuality, builds confidence and independence, and
+                empowers every person to live a fulfilling and valued life.
+              </div>
+            </div>
+
             <div className="mt-8">
               <Button href="/about-us" className="text-ring">
                 About Good Works

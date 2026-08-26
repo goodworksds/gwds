@@ -99,8 +99,8 @@ export default async function ServiceDetailPage({
           </div>
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/placeholder-hero.svg"
-              alt="Placeholder image"
+              src={service.heroImage ?? "/images/placeholder-hero.svg"}
+              alt={service.heroImage ? service.title : "Placeholder image"}
               fill
               unoptimized
               className="object-cover"
