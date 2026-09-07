@@ -82,9 +82,9 @@ export default function CareersPage() {
           </div>
           <div className="mt-10">
             <Button
-              href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Résumé submission")}`}
+              href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Resume Submission")}`}
             >
-              Send your résumé
+              Send your Resume
             </Button>
           </div>
         </Container>
