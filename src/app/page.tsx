@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-deep">
-        <Container className="grid gap-12 py-14 lg:grid-cols-2 lg:items-center lg:py-16">
+        <Container className="grid gap-12 py-14 lg:grid-cols-2 lg:items-top lg:py-16">
           <div>
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Where Love Inspires,{" "}

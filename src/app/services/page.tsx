@@ -15,7 +15,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="bg-gradient-deep py-12 sm:py-16">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-top">
           <SectionHeading
             eyebrow="Our Services"
             title="Love in Action. Truth in Everything We Do"

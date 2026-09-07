@@ -15,7 +15,7 @@ export default function ResourcesPage() {
   return (
     <>
       <section className="bg-gradient-deep py-12 sm:py-16">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-top">
           <SectionHeading
             eyebrow="Resources"
             title="Guides, forms and useful links"
