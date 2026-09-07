@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import ContactForm from "@/components/ContactForm";
+import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
 import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -84,6 +85,27 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://www.facebook.com/profile.php?id=61592779771385"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Good Works Disability Services on Facebook"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground/80 transition-colors hover:border-primary hover:text-primary"
+              >
+                <FacebookIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/goodworksds"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Good Works Disability Services on Instagram"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground/80 transition-colors hover:border-primary hover:text-primary"
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           <div className="lg:col-span-3">

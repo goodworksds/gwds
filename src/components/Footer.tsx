@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";
+import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
 import { navLinks, services, siteConfig } from "@/lib/site-data";
 
 const footerServiceSlugs = [
@@ -95,13 +96,34 @@ export default function Footer() {
               Mon–Fri 9:00am – 5:00pm
             </li>
           </ul>
+
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=61592779771385"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Good Works Disability Services on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-sun hover:text-sun"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/goodworksds"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Good Works Disability Services on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-sun hover:text-sun"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </Container>
 
       <div className="border-t border-white/10">
         <Container className="py-6 text-sm text-white/50">
           <p>
-            © {year} {siteConfig.name}. Template website. NDIS Provider.
+            © {year} {siteConfig.name}. Registered NDIS Provider.
           </p>
         </Container>
       </div>

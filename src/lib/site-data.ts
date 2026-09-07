@@ -9,7 +9,7 @@ export const siteConfig = {
   hours: "Mon–Fri 9:00am – 5:00pm",
   tagline: "Registered NDIS provider · Melbourne",
   footerTagline:
-    "A registered NDIS provider delivering warm, person-centred disability support across Melbourne — sunrise to sunrise.",
+    "Putting compassion into practice, building relationships based on honesty and trust.",
 };
 
 export const navLinks = [
@@ -1142,10 +1142,8 @@ export const careerOpenings = [
 ];
 
 export const careerPerks = [
-  "Above-award pay with penalty rates paid correctly",
-  "Rosters built around your availability",
-  "Paid onboarding and ongoing NDIS training",
-  "Employee assistance program and wellbeing support",
-  "Career pathways into team leader and coordination roles",
-  "A leadership team that knows your name",
+  "Be part of a team where love is put into action and truth guides everything we do.",
+  "Make a meaningful difference by empowering people to recognise their abilities and achieve their goals.",
+  "Grow in a workplace built on respect, compassion, honesty, learning and teamwork.",
+  "Walk with us. Make a difference. Grow with purpose.",
 ];
