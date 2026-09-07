@@ -24,7 +24,7 @@ export default function ResourcesPage() {
           />
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/placeholder-hero.svg"
+              src="/images/resources.jpeg"
               alt="Placeholder image"
               fill
               unoptimized

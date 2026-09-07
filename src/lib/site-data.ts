@@ -5,9 +5,9 @@ export const siteConfig = {
   phone: "04 3316 5178",
   phoneHref: "tel:0433165178",
   email: "admin@goodworksdisabilityservices.com.au",
-  // address: "Suite 4, 120 Dandenong Road, Melbourne VIC 3000",
+  address: "Clyde VIC 3978",
   hours: "Mon–Fri 9:00am – 5:00pm",
-  tagline: "Registered NDIS provider · Melbourne wide",
+  tagline: "Registered NDIS provider · Melbourne",
   footerTagline:
     "A registered NDIS provider delivering warm, person-centred disability support across Melbourne — sunrise to sunrise.",
 };
@@ -16,7 +16,6 @@ export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Services", href: "/services" },
-  { label: "NDIS Information", href: "/ndis-information" },
   { label: "Resources", href: "/resources" },
   { label: "Careers", href: "/careers" },
 ];
@@ -1115,36 +1114,31 @@ export const externalLinks = [
     title: "NDIS Quality & Safeguards Commission",
     href: "https://www.ndiscommission.gov.au/",
   },
-  { title: "Carer Gateway", href: "https://www.carergateway.gov.au/" },
   { title: "Services Australia", href: "https://www.servicesaustralia.gov.au/" },
 ];
 
 export const careerOpenings = [
   {
     title: "Disability Support Worker",
-    location: "Melbourne – South East",
-    type: "Casual",
+    location: "Melbourne - South East",
   },
   {
-    title: "SIL House Team Leader",
-    location: "Dandenong",
-    type: "Full time",
+    title: "Physio Therapist",
+    location: "Melbourne - South East",
+  },
+  {
+    title: "Occupational Therapist",
+    location: "Melbourne - South East",
   },
   {
     title: "Support Coordinator",
-    location: "Melbourne CBD / Hybrid",
-    type: "Full time",
+    location: "Melbourne - South East",
   },
   {
     title: "Registered Nurse – Complex Care",
-    location: "Melbourne wide",
-    type: "Part time",
+    location: "Melbourne - South East",
   },
-  {
-    title: "Rostering Officer",
-    location: "Melbourne CBD",
-    type: "Full time",
-  },
+  
 ];
 
 export const careerPerks = [

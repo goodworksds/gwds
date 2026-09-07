@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import Container from "@/components/Container";
@@ -177,7 +178,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur">
-      <div className="bg-deep text-deep-foreground">
+      <div className="bg-deep text-deep-foreground hide">
         <Container className="flex items-center justify-between py-2 text-sm sm:text-base">
           <span className="truncate">{siteConfig.tagline}</span>
           <a
@@ -230,20 +231,38 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-4 lg:flex">
+            <Image
+              src="/images/we-ndis.jpeg"
+              alt="Registered NDIS Provider"
+              width={160}
+              height={75}
+              unoptimized
+              className="h-20 w-auto"
+            />
             <Button href="/contact" className="px-5 py-2.5">
               Get in Touch
             </Button>
           </div>
 
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-deep lg:hidden"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <Image
+              src="/images/we-ndis.jpeg"
+              alt="Registered NDIS Provider"
+              width={160}
+              height={75}
+              unoptimized
+              className="h-10 w-auto"
+            />
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="flex h-10 w-10 items-center justify-center rounded-full text-deep"
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </Container>
       </div>
 

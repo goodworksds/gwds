@@ -1,16 +1,25 @@
 import Link from "next/link";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";
-import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
 import { navLinks, services, siteConfig } from "@/lib/site-data";
+
+const footerServiceSlugs = [
+  "community-participation",
+  "household-tasks",
+  "high-intensity-daily-personal-activities",
+  "travel-transport",
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const footerServices = footerServiceSlugs
+    .map((slug) => services.find((service) => service.slug === slug))
+    .filter((service) => service !== undefined);
 
   return (
     <footer className="bg-gradient-deep text-deep-foreground">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 py-14">
         <div>
           <Logo variant="dark" />
           <p className="mt-4 max-w-xs text-base leading-relaxed text-white/70">
@@ -46,10 +55,12 @@ export default function Footer() {
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-sun/99">
-            Our Services
+            <Link href="/services" className="hover:underline">
+              Our Services
+            </Link>
           </h3>
           <ul className="mt-4 space-y-2.5 text-base">
-            {services.map((service) => (
+            {footerServices.map((service) => (
               <li key={service.slug}>
                 <Link
                   href={`/services/${service.slug}`}
@@ -67,49 +78,23 @@ export default function Footer() {
             Contact
           </h3>
           <ul className="mt-4 space-y-2.5 text-base text-white/80">
-            <li>
-              <a
-                href={siteConfig.phoneHref}
-                className="flex items-center gap-2 hover:text-sun hover:underline"
-              >
-                <Phone className="h-4 w-4 shrink-0" />
-                {siteConfig.phone}
-              </a>
+            <li className="flex items-center gap-2">
+              <Phone className="h-4 w-4 shrink-0" />
+              {siteConfig.phone}
             </li>
-            <li>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2 hover:text-sun hover:underline"
-              >
-                <Mail className="h-4 w-4 shrink-0" />
-                {siteConfig.email}
-              </a>
+            <li className="flex items-center gap-2">
+              <Mail className="h-4 w-4 shrink-0" />
+              {siteConfig.email}
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0" />
+              {siteConfig.address}
             </li>
             <li className="flex items-center gap-2">
               <Clock className="h-4 w-4 shrink-0" />
               Mon–Fri 9:00am – 5:00pm
             </li>
-            {/* <li>{siteConfig.address}</li> */}
           </ul>
-
-          <div className="mt-5 flex items-center gap-3">
-            <a
-              href="https://www.facebook.com/profile.php?id=61592779771385"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Good Works Disability Services on Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-sun hover:text-sun"
-            >
-              <FacebookIcon className="h-4 w-4" />
-            </a>
-            <a
-              href="#"
-              aria-label="Good Works Disability Services on Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-sun hover:text-sun"
-            >
-              <InstagramIcon className="h-4 w-4" />
-            </a>
-          </div>
         </div>
       </Container>
 

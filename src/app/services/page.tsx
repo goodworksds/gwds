@@ -41,7 +41,7 @@ export default function ServicesPage() {
           />
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/services.jpg"
+              src="/images/our-services.jpeg"
               alt="Love in Action. Truth in Everything We Do"
               fill
               unoptimized

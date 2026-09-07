@@ -9,7 +9,7 @@ import { careerOpenings, careerPerks, siteConfig } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Become a Life Changer. Current openings and why support work is a career, not a stopgap, at Good Works Disability Services.",
+    "Walk with us to make a difference. Current openings and why support work is a career, not a stopgap, at Good Works Disability Services.",
 };
 
 export default function CareersPage() {
@@ -19,13 +19,13 @@ export default function CareersPage() {
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <SectionHeading
             eyebrow="Careers"
-            title="Become a Life Changer"
+            title="Walk with us to make a difference"
             description="We're always looking for warm, reliable people who want support work to be a career, not a stopgap."
             light
           />
           <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/placeholder-hero.svg"
+              src="/images/careers.png"
               alt="Placeholder image"
               fill
               unoptimized
@@ -49,12 +49,12 @@ export default function CareersPage() {
                     {role.title}
                   </h3>
                   <p className="mt-1 text-base text-muted-foreground">
-                    {role.location} · {role.type}
+                    {role.location}
                   </p>
                 </div>
                 <Button
                   href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(
-                    `Application: ${role.title}`
+                    `Application: ${role.title}`,
                   )}`}
                   variant="outline"
                   className="self-start sm:self-auto"
@@ -81,7 +81,9 @@ export default function CareersPage() {
             ))}
           </div>
           <div className="mt-10">
-            <Button href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Résumé submission")}`}>
+            <Button
+              href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Résumé submission")}`}
+            >
               Send your résumé
             </Button>
           </div>
